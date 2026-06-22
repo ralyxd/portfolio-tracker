@@ -1,0 +1,3554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Tracker</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAEZElEQVR4nO3d223bMBiGYaXolUfIOB0iQ2aIjJM5emHAMBJbpvWRIik/z11b+ADoxS9ap76dTqcFtvrT+wswNwERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARARH52/sLUNnX98f1H/+9fzb9OBPoUH7Uc/Nv6hLQcdxrpWlDAjqI9UraNSQgIgIiIiAiAiIioCN4uEZudzRIQMfX9FiigKa3Pn4ciWa71vUsAppd6zMVDwloYn13XmfOxk+p++C5MIHmU1LPPuNnEdB0xpk9ZwKazL/3z92mSwkBEREQEQHNZ6hlkICICGgyDw8e7rzEFtBxXNLZsyEBzWSo1c+ZUxkN7XmPX6+DQyZQK9Xv8Rtw/CwCamTne/w6HpsWUH0t7vEbc/wsAjqAvqfGBNTB1/fHUxNl2PGzCKijZzO6qfuZeQFV9mwTDzMaefwsAhrEtkq6j59FQHUl0+LmKBp8/CwCGk35wmiE8bM4lVFRyU02hXGMP3guTKA9XJ8nrzI5Bhk/i4BqeWpmjHZhfEJAzd1rZXNGQ8UnoAqSJctQNWzwdjqden+HudW6QX2uH18XJtAoJl0YmUCRRs/HuPe2AxZmArWSbOwBQ7nHgcTtmh7u+3HgcdikBNREre09bDcXdmEbTXS2oSkB1Tf+2KhIQFsYPxcCquylxs8ioA2Mn2sCes4IT9YdioCICOgJxs9vAqrjNetZBFTO2vkmAVXwsuNnEVAh4+ceAaVeefwsAiph/KwQ0AN+uq8TEBEBrTF+Hpr+isReF32q52zuCXQ9Iaovda2dS0wcUMen6Rg/F1PuwlZCOf9TvoGNn0LzTaCSTbvDDTecTRZQeRnJM1CNn3IzBbRhu1ZPwfj5YY41UPjwyqXBUzI4m2ACPdyiJXFUeTih8fPb6AEV1lPybJQqT4bnh3Ef71KysX9Hs+1VJa81fm4aNKCkg80vX3mVeu4ZcRdWstta36IbVkX2btsMN4GqLJnL3+3yhsbPNgMFFO62kret/qGvY5SA6g6eDe/f6HMPb4g1UOt6qrwDN3WeQI12W+EnNvroQ+o5gfJfWxtooq5uE2iH3dbgX+AYOkygklMKO2w8fVSx9wTaf9Hz0M2vJK9CzQOaYtF6/SWl85S2AU1RD4mGayD1vIJWVySW1yOdqXU+Eq2e2fUMSD0H0C0g9RzDECdTmVergPIrBplCwwm08v+lt/tQdtZ2F/a7FfUczChXJDIpi2giAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIv8BTuxe8o+ut40AAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEEElEQVR4nO3d3W3bShSF0clFnlxCykkRKTJFpJzUcR8EBIasLfFnhjwjrvWWAJYNzOdDakTS3z4+Pho88t/ZPwB1iYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDqLvZ/8ArPbn76/P//z54/egb2RyTOaujIf/04s4ZpI6GNSHOKbxvIARfYiDSBxE4iASB5E45vDyfHPEboc43sGgfTBxTOD52LBDymPjymjiqO/J2BhaRvPBW2XjPjRZyOQo6pS3J3fEUdHpM+NGHBX9/PH7gMHwkjiIxFFUhSOLOIjEUVGFsdHEMZ0jz1W/+dOh1Zy4JXrHDmkHh90rcDCHlb363itQZ2w0cex08L0CBxPHdt3vFSg1Npo4hpp9fohjrOV9VBsbTRwH+PP316QjxD7HRtvWO82AgmOjmRwHm2uKmBxbdFngfyOh5thoJseJ6k8RcazW9y6SsmOjiaOv23Kevqi9iGOdhQeC/R+sVyhMHN18Xc4i1wlvJo4VNu9trE2kSFLi6OPlcs44RcSxVK+9jSUZ7f9GXYijg0mPGi+5THCR7rtVtz6KX18ojr32rOi/RKplceOw8troTe6aZTRxvHTWI5cqEAeROJ658tho4tjs7cto4nii+MUWBxDHFlcYG00cibHRxLHBRcZGE8dDxsaNONa5ztho4vjK2PhHHCtcamw0cdwxNj4Tx1JXGxtt0us5Pv9+d1wzY+POfPfKPlzC/Ylc/DO2hyY7rLz3M7iqmWZyLL/VrPuLX3NstFkmR5eHJ21z2TLaFHGsXe+1jzZwSEqqx7F55fo+X+Wa6r6V3b+6t1d4vsDGxhNFJ0fHP3+3efkvPjZazXcrq8pYvvZfF9ublOfKTY61M2PQCFFGKzU5lizekzVbO0KMjZeqTI4lA+P5gnUcIcq4KTE5+q7W/jcg4rg5f3J0/z1+gye1FXHmPsfOk4yXX2UPY6fTDivHHPjX9mFsfHbOYeWwU8IZH9NWxwlxHP9mYeELyujOoecc404yFr6ss5BVjjvnKLK7kH4MY+OrgXFU3q4edInymxkVR+UyWGjICaky3kP/E9I9n6FTymnb58qo75w4lDGFE+JQxizO/1SWsvrH0euSHE43ZHKkApQxl1GHlYd/DW/Q92KQEpcJUpMTUiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iP4H+IdAUlm74sEAAAAASUVORK5CYII=">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Portfolio">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0e0f11">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e0f11;
+  --surface: #16181c;
+  --surface2: #1e2027;
+  --border: #2a2d35;
+  --border2: #353840;
+  --text: #e8eaf0;
+  --text2: #8b8f9e;
+  --text3: #545768;
+  --accent: #c8f060;
+  --accent2: #a8d040;
+  --green: #4ade80;
+  --red: #f87171;
+  --blue: #60a5fa;
+  --mono: 'DM Mono', monospace;
+  --sans: 'Syne', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.5}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:0;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.main{padding:2.5rem 3rem;overflow-y:auto}
+
+/* Sidebar */
+.logo{padding:2rem 1.5rem 1.5rem;border-bottom:1px solid var(--border)}
+.logo-text{font-size:1.1rem;font-weight:700;letter-spacing:-.02em;color:var(--text)}
+.logo-sub{font-size:.7rem;font-family:var(--mono);color:var(--text3);margin-top:2px;letter-spacing:.05em;text-transform:uppercase}
+.nav{padding:1rem 0;flex:1}
+.nav-item{display:flex;align-items:center;gap:10px;padding:.7rem 1.5rem;cursor:pointer;color:var(--text2);font-size:.875rem;font-weight:500;transition:all .15s;border-left:2px solid transparent;user-select:none}
+.nav-item:hover{color:var(--text);background:rgba(255,255,255,.03)}
+.nav-item.active{color:var(--accent);border-left-color:var(--accent);background:rgba(200,240,96,.04)}
+.nav-icon{width:18px;height:18px;opacity:.7;flex-shrink:0}
+.nav-item.active .nav-icon{opacity:1}
+.sidebar-bottom{padding:1.5rem;border-top:1px solid var(--border)}
+.version{font-size:.7rem;font-family:var(--mono);color:var(--text3)}
+
+/* Header */
+.page-header{margin-bottom:2.5rem}
+.page-title{font-size:1.75rem;font-weight:700;letter-spacing:-.03em;color:var(--text)}
+.page-sub{font-size:.875rem;color:var(--text3);margin-top:.25rem;font-family:var(--mono)}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border-radius:12px;overflow:hidden;margin-bottom:2rem}
+.stat-card{background:var(--surface);padding:1.25rem 1.5rem}
+.stat-label{font-size:.7rem;font-family:var(--mono);color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.stat-value{font-size:1.5rem;font-weight:700;letter-spacing:-.03em;font-family:var(--mono)}
+.stat-value.pos{color:var(--green)}
+.stat-value.neg{color:var(--red)}
+.stat-value.neutral{color:var(--text)}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.card-header{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-title{font-size:.8rem;font-family:var(--mono);color:var(--text2);text-transform:uppercase;letter-spacing:.08em}
+.card-body{padding:1.5rem}
+
+/* Filter pills */
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.pill{padding:.3rem .8rem;background:var(--surface2);border:1px solid var(--border);border-radius:20px;font-size:.75rem;font-family:var(--mono);color:var(--text2);cursor:pointer;transition:all .15s;user-select:none}
+.pill:hover{border-color:var(--border2);color:var(--text)}
+.pill.active{background:rgba(200,240,96,.1);border-color:var(--accent);color:var(--accent)}
+
+/* Table */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:.75rem 1rem;font-size:.7rem;font-family:var(--mono);color:var(--text3);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:0 1rem;font-size:.875rem;border-bottom:1px solid var(--border);vertical-align:middle;height:48px}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.015)}
+.ticker-cell{font-family:var(--mono);font-weight:500;font-size:.9rem;color:var(--text)}
+.mono{font-family:var(--mono)}
+.pos{color:var(--green)}
+.neg{color:var(--red)}
+.muted{color:var(--text3);font-size:.75rem;font-family:var(--mono)}
+
+/* Badges */
+.badge{display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.7rem;font-family:var(--mono);font-weight:500;letter-spacing:.04em}
+.badge-buy{background:rgba(96,165,250,.15);color:var(--blue);border:1px solid rgba(96,165,250,.25)}
+.badge-sell{background:rgba(248,113,113,.15);color:var(--red);border:1px solid rgba(248,113,113,.25)}
+.badge-open{background:rgba(200,240,96,.1);color:var(--accent);border:1px solid rgba(200,240,96,.2)}
+
+/* Form */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field label{font-size:.75rem;font-family:var(--mono);color:var(--text3);text-transform:uppercase;letter-spacing:.06em}
+input,select{height:42px;padding:0 12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.875rem;font-family:var(--sans);width:100%;transition:border-color .15s;outline:none}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,240,96,.08)}
+select option{background:var(--surface2)}
+input::placeholder{color:var(--text3)}
+.field-row{display:flex;align-items:center;gap:.5rem;font-size:.75rem;font-family:var(--mono);color:var(--text3);padding:.5rem 0}
+
+/* Buttons */
+.btn{height:42px;padding:0 1.25rem;border-radius:8px;font-size:.875rem;font-family:var(--sans);font-weight:600;cursor:pointer;transition:all .15s;border:1px solid var(--border);background:transparent;color:var(--text2)}
+.btn:hover{color:var(--text);border-color:var(--border2);background:var(--surface2)}
+.btn-primary{background:var(--accent);color:#0e0f11;border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent2);border-color:var(--accent2)}
+.btn-sm{height:32px;padding:0 .75rem;font-size:.75rem}
+.btn-ghost{border:none;background:none;height:28px;padding:0 .5rem;color:var(--text3);font-size:.75rem;font-family:var(--mono)}
+.btn-ghost:hover{color:var(--red)}
+.btn-row{display:flex;gap:.75rem;margin-top:1.5rem;justify-content:flex-end}
+
+/* Toast */
+.toast{position:fixed;top:1.5rem;right:2rem;padding:.875rem 1.25rem;border-radius:10px;font-size:.875rem;font-family:var(--mono);z-index:999;transform:translateY(calc(-100% - 3rem));transition:transform .3s cubic-bezier(.34,1.56,.64,1);max-width:320px;border:1px solid;visibility:hidden}
+.toast.show{transform:translateY(0);visibility:visible}
+.toast-success{background:#0d2a18;color:var(--green);border-color:rgba(74,222,128,.2)}
+.toast-error{background:#2a0d0d;color:var(--red);border-color:rgba(248,113,113,.2)}
+
+/* Import */
+textarea{width:100%;padding:12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.8rem;font-family:var(--mono);resize:vertical;min-height:140px;outline:none;transition:border-color .15s;line-height:1.6}
+textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,240,96,.08)}
+.import-hint{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:1rem}
+.import-hint-title{font-size:.7rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:.5rem}
+.import-hint-text{font-size:.8rem;font-family:var(--mono);color:var(--text2);line-height:1.7}
+.cols-list{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
+.col-tag{padding:.15rem .5rem;background:rgba(200,240,96,.08);border:1px solid rgba(200,240,96,.2);border-radius:4px;font-size:.7rem;font-family:var(--mono);color:var(--accent)}
+
+/* Sortable headers */
+.th-sort{cursor:pointer;user-select:none;white-space:nowrap}
+.th-sort:hover{color:var(--text2)}
+.th-sort.sort-active{color:var(--accent)}
+.sort-icon{font-size:.65rem;opacity:.4;margin-left:2px}
+.th-sort.sort-active .sort-icon{opacity:1;color:var(--accent)}
+
+/* Empty */
+.empty{text-align:center;padding:3rem;color:var(--text3);font-family:var(--mono);font-size:.8rem}
+.empty-icon{font-size:2rem;margin-bottom:.75rem;opacity:.3}
+
+/* Section */
+.section{display:none}
+.section.active{display:block}
+
+/* Separator */
+.sep{height:1px;background:var(--border);margin:1.5rem 0}
+
+/* Checkbox */
+input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);cursor:pointer;flex-shrink:0}
+tr.selected td{background:rgba(200,240,96,.04) !important}
+
+/* Selection bar */
+.sel-bar{position:fixed;top:1.5rem;left:50%;transform:translateX(-50%) translateY(calc(-200% - 3rem));background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem;z-index:200;transition:transform .25s cubic-bezier(.34,1.56,.64,1);box-shadow:0 8px 32px rgba(0,0,0,.4);white-space:nowrap}
+.sel-bar.show{transform:translateX(-50%) translateY(0)}
+.sel-count{font-size:.8rem;font-family:var(--mono);color:var(--text2)}
+.sel-count span{color:var(--accent);font-weight:600}
+.btn-danger-outline{height:36px;padding:0 1rem;border-radius:8px;font-size:.8rem;font-family:var(--sans);font-weight:600;cursor:pointer;border:1px solid rgba(248,113,113,.35);background:transparent;color:var(--red);transition:all .15s}
+.btn-danger-outline:hover{background:rgba(248,113,113,.1)}
+
+/* Modal overlay */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.show{opacity:1;pointer-events:all}
+.modal{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:2rem;width:min(480px,90vw);transform:scale(.96);transition:transform .2s}
+.modal-overlay.show .modal{transform:scale(1)}
+.modal-title{font-size:1rem;font-weight:600;margin-bottom:1.5rem;color:var(--text)}
+.modal-footer{display:flex;gap:.75rem;justify-content:flex-end;margin-top:1.5rem}
+
+/* Edit icon button */
+.btn-edit{border:none;background:none;height:28px;padding:0 .5rem;color:var(--text3);font-size:.75rem;font-family:var(--mono);cursor:pointer;transition:color .15s}
+.btn-edit:hover{color:var(--accent)}
+
+/* Hidden mode */
+body.hidden-mode .money { filter: blur(6px); user-select: none; pointer-events: none; transition: filter .2s; }
+body.hidden-mode .money:hover { filter: blur(0); }
+.btn-hidden { display: flex; align-items: center; gap: 8px; width: 100%; padding: .6rem 1rem; background: none; border: 1px solid var(--border); border-radius: 8px; color: var(--text2); font-size: .75rem; font-family: var(--mono); cursor: pointer; transition: all .15s; }
+.btn-hidden:hover { color: var(--accent); border-color: var(--accent); background: rgba(200,240,96,.04); }
+.btn-hidden.active { color: var(--accent); border-color: var(--accent); background: rgba(200,240,96,.08); }
+.btn-hidden svg { width:15px; height:15px; flex-shrink:0; }
+
+.nav-item-mobile-only { display: none; }
+
+/* Op color bands for non-overlapping groups */
+.op-band-0 { background: rgba(96,165,250,.06) !important; }
+.op-band-1 { background: rgba(200,240,96,.06) !important; }
+.op-band-2 { background: rgba(248,113,113,.06) !important; }
+.op-band-3 { background: rgba(167,139,250,.06) !important; }
+.op-band-4 { background: rgba(251,191,36,.06) !important; }
+
+/* Mobile detail modal */
+.mob-detail-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:400; align-items:flex-end; justify-content:center; }
+.mob-detail-overlay.show { display:flex; }
+.mob-detail-sheet { background:var(--surface); border-radius:16px 16px 0 0; width:100%; max-height:85vh; overflow-y:auto; padding:1.5rem; border-top:1px solid var(--border2); }
+.mob-detail-handle { width:40px; height:4px; background:var(--border2); border-radius:2px; margin:0 auto 1.25rem; }
+.mob-detail-title { font-size:1.1rem; font-weight:700; margin-bottom:1.25rem; display:flex; align-items:center; justify-content:space-between; }
+.mob-op-card { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:1rem; margin-bottom:.75rem; }
+.mob-op-card:last-child { margin-bottom:0; }
+.mob-op-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:.4rem; font-size:.8rem; }
+.mob-op-row:last-child { margin-bottom:0; }
+.mob-op-label { color:var(--text3); font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; }
+.mob-op-val { font-family:var(--mono); color:var(--text); }
+.company-history-row { border-bottom: 1px solid var(--border); }
+.company-history-row:last-child { border-bottom: none; }
+
+/* Mobile closed table: hide non-essential columns */
+@media(max-width:768px) {
+  .col-desktop { display:none; }
+  .closed-row-mobile { cursor:pointer; }
+  .open-row-mobile { cursor:pointer; }
+  #sec-resumen .table-wrap { overflow-x: hidden; }
+  #sec-resumen table { table-layout: fixed; width: 100%; }
+  #sec-resumen td { padding: 0 .75rem; overflow: hidden; text-overflow: ellipsis; }
+  #sec-resumen td:first-child { width: 55%; }
+  #sec-resumen td:last-child { width: 45%; }
+}
+
+@media(max-width:768px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:fixed;bottom:0;top:auto;height:auto;width:100%;border-right:none;border-top:1px solid var(--border);z-index:100;flex-direction:row}
+  .nav{display:flex;flex-direction:row;padding:0;overflow-x:auto}
+  .nav-item{flex-direction:column;gap:4px;padding:.75rem 1rem;border-left:none;border-top:2px solid transparent;font-size:.65rem;white-space:nowrap}
+  .nav-item.active{border-left:none;border-top-color:var(--accent)}
+  .nav-item-mobile-only { display: flex; }
+  .logo,.sidebar-bottom{display:none}
+  .main{padding:1.5rem;padding-bottom:6rem}
+  .form-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  #sec-movimientos .card:first-of-type .card-body > div { grid-template-columns: 1fr 1fr !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-text">Portfolio</div>
+      <div class="logo-sub">Tracker v1.0</div>
+    </div>
+    <nav class="nav">
+      <div class="nav-item active" onclick="showSection('resumen')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        Resumen
+      </div>
+      <div class="nav-item" onclick="showSection('analisis')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.024 9.024 0 0120.488 9z"/></svg>
+        Análisis
+      </div>
+      <div class="nav-item" onclick="showSection('activos')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        Activos
+      </div>
+      <div class="nav-item" onclick="showSection('movimientos')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+        Movimientos
+      </div>
+      <div class="nav-item" onclick="showSection('opciones')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Opciones
+      </div>
+    </nav>
+    <div class="sidebar-bottom">
+      <div id="sync-status" style="font-size:.7rem;font-family:var(--mono);min-height:1rem;padding:0 .25rem"></div>
+      <div class="version" style="margin-top:.75rem">portfolio-tracker.html</div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- RESUMEN -->
+    <div class="section active" id="sec-resumen">
+      <div class="page-header">
+        <div class="page-title">Resumen</div>
+        <div class="page-sub" id="summary-date"></div>
+      </div>
+      <div id="level-alerts-banner" style="display:none;margin-bottom:1.5rem"></div>
+      <div class="stats-grid" id="stats-grid"></div>
+      <div class="filters" id="filter-pills">
+        <div style="position:relative;max-width:280px">
+          <svg style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--text3);pointer-events:none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0"/></svg>
+          <input type="text" id="ticker-search" placeholder="Buscar empresa…" oninput="setFilterSearch(this.value)" autocomplete="off"
+            style="width:100%;padding:.5rem .75rem .5rem 2.25rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.875rem;outline:none;box-sizing:border-box">
+        </div>
+      </div>
+      <div style="display:flex;gap:.5rem;margin-bottom:1rem">
+        <button class="btn btn-sm" id="toggle-global-btn" onclick="setResumenView('global')" style="flex:1">Global</button>
+        <button class="btn btn-sm" id="toggle-closed-btn" onclick="setResumenView('closed')" style="flex:1">Op. cerradas</button>
+        <button class="btn btn-sm" id="toggle-open-btn" onclick="setResumenView('open')" style="flex:1">Pos. abiertas</button>
+      </div>
+      <div class="card" id="closed-card" style="margin-bottom:1.5rem">
+        <div class="card-header">
+          <span class="card-title">Operaciones cerradas</span>
+          <span class="muted" id="closed-count"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th class="th-sort" data-csort="ticker" onclick="setClosedSort('ticker')">Empresa <span class="sort-icon" id="csi-ticker">↕</span></th><th class="th-sort col-desktop" data-csort="qty" onclick="setClosedSort('qty')">Acciones <span class="sort-icon" id="csi-qty">↕</span></th><th class="col-desktop">Compra</th><th class="col-desktop">Fecha compra</th>
+              <th class="col-desktop">Venta</th><th class="col-desktop">Fecha venta</th><th class="th-sort" data-csort="profit" onclick="setClosedSort('profit')">Beneficio <span class="sort-icon" id="csi-profit">↕</span></th><th class="th-sort col-desktop" data-csort="pct" onclick="setClosedSort('pct')">Rentab. <span class="sort-icon" id="csi-pct">↕</span></th><th class="col-desktop">Tiempo</th>
+            </tr></thead>
+            <tbody id="closed-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card" id="open-card" style="display:none">
+        <div class="card-header">
+          <span class="card-title">Posiciones abiertas</span>
+          <span class="muted" id="open-count"></span>
+          <button id="refresh-all-prices-btn" onclick="fetchAllOpenPrices()" class="btn btn-sm" style="margin-left:auto;font-size:.75rem">↻ Ver precios en bolsa</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th class="th-sort" data-osort="ticker" onclick="setOpenSort('ticker')">Empresa <span class="sort-icon" id="osi-ticker">↕</span></th>
+              <th class="th-sort col-desktop" data-osort="qty" onclick="setOpenSort('qty')">Acciones <span class="sort-icon" id="osi-qty">↕</span></th>
+              <th class="th-sort col-desktop" data-osort="avgPrice" onclick="setOpenSort('avgPrice')">Precio medio <span class="sort-icon" id="osi-avgPrice">↕</span></th>
+              <th class="th-sort" data-osort="total" onclick="setOpenSort('total')">Invertido <span class="sort-icon" id="osi-total">↕</span></th>
+            </tr></thead>
+            <tbody id="open-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div id="global-card" style="display:none">
+        <span class="muted" id="global-count" style="font-size:.8rem;display:block;margin-bottom:1rem"></span>
+        <div id="global-grid" style="display:flex;flex-direction:column;gap:1rem"></div>
+      </div>
+    </div>
+
+    <!-- ACTIVOS -->
+    <div class="section" id="sec-activos">
+      <div class="page-header">
+        <div class="page-title">Activos</div>
+        <div class="page-sub">Info de cada empresa o activo en cartera</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap">
+        <div style="position:relative;flex:1;min-width:180px;max-width:320px">
+          <svg style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--text3);pointer-events:none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0"/></svg>
+          <input type="text" id="activos-search" placeholder="Buscar por nombre o ticker…" oninput="filterActivos(this.value)" autocomplete="off"
+            style="width:100%;padding:.5rem .75rem .5rem 2.25rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.875rem;outline:none;box-sizing:border-box;transition:border-color .15s"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+        <select id="activos-filter-tipo" onchange="filterActivosCol('tipo', this.value)" style="width:auto;min-width:140px">
+          <option value="">Todos los tipos</option>
+          <option value="Empresa">Empresa</option>
+          <option value="ETF">ETF</option>
+          <option value="Criptomoneda">Criptomoneda</option>
+          <option value="Índice">Índice</option>
+        </select>
+        <select id="activos-filter-sector" onchange="filterActivosCol('sector', this.value)" style="width:auto;min-width:140px">
+          <option value="">Todos los sectores</option>
+        </select>
+        <button class="btn btn-sm" onclick="clearActivosFilters()" title="Limpiar filtros" style="white-space:nowrap">✕ Limpiar</button>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Activos</span>
+          <span class="muted" id="empresas-count"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th>Nombre</th>
+              <th>Ticker</th>
+              <th class="col-desktop">Tipo</th>
+              <th class="col-desktop">Sector</th>
+              <th>Nivel 1</th>
+              <th>Nivel 2</th>
+              <th class="col-desktop">Nivel 3</th>
+              <th class="col-desktop">Nivel 4</th>
+              <th class="col-desktop">Extra</th>
+              <th>Venta</th>
+              <th style="width:70px"></th>
+            </tr></thead>
+            <tbody id="empresas-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal añadir/editar empresa -->
+    <div id="empresa-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;align-items:center;justify-content:center">
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:1.75rem;width:min(480px,90vw);max-height:85vh;overflow-y:auto">
+        <div style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center">
+          <span id="empresa-modal-title">Añadir empresa</span>
+          <button onclick="closeEmpresaModal()" style="background:none;border:none;color:var(--text3);font-size:1.2rem;cursor:pointer">✕</button>
+        </div>
+        <div class="form-grid" style="grid-template-columns:1fr 1fr">
+          <div class="field" style="grid-column:1/-1"><label>Nombre</label><input type="text" id="em-nombre" placeholder="Apple Inc."></div>
+          <div class="field"><label>Ticker</label><input type="text" id="em-ticker" oninput="this.value=this.value.toUpperCase()" placeholder="AAPL"></div>
+          <div class="field"><label>Tipo</label>
+            <select id="em-tipo">
+              <option value="">— Seleccionar —</option>
+              <option value="Empresa">Empresa</option>
+              <option value="ETF">ETF</option>
+              <option value="Criptomoneda">Criptomoneda</option>
+              <option value="Índice">Índice</option>
+            </select>
+          </div>
+          <div class="field" style="grid-column:1/-1">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem">
+              <label style="margin:0">Sector</label>
+              <button type="button" onclick="detectSector()" id="detect-sector-btn" class="btn btn-sm" style="font-size:.68rem;padding:.2rem .55rem">↻ Detectar sector</button>
+            </div>
+            <select id="em-sector">
+              <option value="">— Seleccionar —</option>
+              <option value="Tecnología">Tecnología</option>
+              <option value="Salud">Salud</option>
+              <option value="Finanzas">Finanzas</option>
+              <option value="Consumo discrecional">Consumo discrecional</option>
+              <option value="Consumo básico">Consumo básico</option>
+              <option value="Energía">Energía</option>
+              <option value="Industrial">Industrial</option>
+              <option value="Materiales">Materiales</option>
+              <option value="Servicios de comunicación">Servicios de comunicación</option>
+              <option value="Inmobiliario">Inmobiliario</option>
+              <option value="Utilities">Utilities</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="field" style="grid-column:1/-1">
+            <label>Subsector</label>
+            <input type="text" id="em-subsector" placeholder="Se rellena al detectar sector, o escríbelo a mano">
+          </div>
+          <div class="field"><label>Nivel 1</label><input type="number" id="em-n1" step="any" placeholder="0.00"></div>
+          <div class="field"><label>Nivel 2</label><input type="number" id="em-n2" step="any" placeholder="0.00"></div>
+          <div class="field"><label>Nivel 3</label><input type="number" id="em-n3" step="any" placeholder="0.00"></div>
+          <div class="field"><label>Nivel 4</label><input type="number" id="em-n4" step="any" placeholder="0.00"></div>
+          <div class="field"><label>Nivel Extra</label><input type="number" id="em-nextra" step="any" placeholder="0.00"></div>
+          <div class="field"><label>Venta deseada</label><input type="number" id="em-venta" step="any" placeholder="0.00"></div>
+        </div>
+        <div class="btn-row" style="margin-top:1.25rem">
+          <button class="btn" onclick="closeEmpresaModal()">Cancelar</button>
+          <button class="btn btn-primary" onclick="saveEmpresa()">Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal desglose de inversión por empresa -->
+    <div id="invested-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;align-items:center;justify-content:center" onclick="if(event.target===this)closeInvestedBreakdown()">
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:1.75rem;width:min(480px,90vw);max-height:85vh;overflow-y:auto">
+        <div style="font-size:1rem;font-weight:700;margin-bottom:.25rem;display:flex;justify-content:space-between;align-items:center">
+          <span>Inversión por empresa</span>
+          <button onclick="closeInvestedBreakdown()" style="background:none;border:none;color:var(--text3);font-size:1.2rem;cursor:pointer">✕</button>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem">
+          <span class="muted" style="font-size:.8rem">Total invertido por empresa</span>
+          <button class="btn btn-sm" id="invested-dir-btn" onclick="toggleInvestedBreakdownDir()">↑ Ascendente</button>
+        </div>
+        <div id="invested-breakdown-list"></div>
+      </div>
+    </div>
+
+    <!-- Modal detalle de empresa (vista global) -->
+    <div id="company-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;align-items:center;justify-content:center" onclick="if(event.target===this)closeCompanyDetail()">
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:1.75rem;width:min(820px,92vw);max-height:88vh;overflow-y:auto">
+        <div id="company-modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Modal historial de beneficios -->
+    <div id="profit-history-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;align-items:center;justify-content:center" onclick="if(event.target===this)closeProfitHistory()">
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:1.75rem;width:min(540px,92vw);max-height:88vh;overflow-y:auto">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem">
+          <div style="font-size:1rem;font-weight:700">Historial de ganancias</div>
+          <button onclick="closeProfitHistory()" style="background:none;border:none;color:var(--text3);font-size:1.2rem;cursor:pointer;padding:0">✕</button>
+        </div>
+        <div id="profit-history-list"></div>
+      </div>
+    </div>
+
+    <!-- Modal precios en bolsa de posiciones abiertas -->
+    <div id="all-prices-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;align-items:center;justify-content:center" onclick="if(event.target===this)closeAllPrices()">
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:1.75rem;width:min(480px,92vw);max-height:88vh;overflow-y:auto">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem">
+          <div style="font-size:1rem;font-weight:700">Precios en bolsa</div>
+          <button onclick="closeAllPrices()" style="background:none;border:none;color:var(--text3);font-size:1.2rem;cursor:pointer;padding:0">✕</button>
+        </div>
+        <div id="all-prices-summary"></div>
+      </div>
+    </div>
+
+    <!-- ANÁLISIS -->
+    <div class="section" id="sec-analisis">
+      <div class="page-header">
+        <div class="page-title">Análisis</div>
+        <div class="page-sub">Evolución y distribución de tu cartera</div>
+      </div>
+
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="card-header">
+          <span class="card-title">Evolución del beneficio realizado</span>
+        </div>
+        <div style="padding:1.5rem">
+          <div id="evolution-chart-container" style="width:100%;overflow-x:auto"></div>
+          <div style="display:flex;gap:1.25rem;margin-top:1rem;flex-wrap:wrap;font-size:.78rem">
+            <div style="display:flex;align-items:center;gap:.4rem"><span style="width:14px;height:3px;background:var(--accent);display:inline-block;border-radius:2px"></span> Beneficio realizado acumulado</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="card-header" style="flex-wrap:wrap;gap:.5rem">
+          <span class="card-title" id="sector-evo-title">Evolución por sector</span>
+          <div style="display:flex;gap:.4rem;margin-left:auto;flex-wrap:wrap">
+            <select id="sector-evo-dimension" onchange="setSectorEvoDimension(this.value)" style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;color:var(--text);padding:.3rem .6rem;font-size:.75rem;cursor:pointer">
+              <option value="sector">Por sector</option>
+              <option value="subsector">Por subsector</option>
+            </select>
+            <button class="btn btn-sm btn-primary" id="sector-evo-mode-stacked" onclick="setSectorEvoMode('stacked')" style="font-size:.72rem;padding:.3rem .6rem">Apilado</button>
+            <button class="btn btn-sm" id="sector-evo-mode-lines" onclick="setSectorEvoMode('lines')" style="font-size:.72rem;padding:.3rem .6rem">Líneas</button>
+          </div>
+        </div>
+        <div style="padding:1.5rem">
+          <div id="sector-evo-checkboxes" style="display:none;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem"></div>
+          <div id="sector-evo-chart-container" style="width:100%;overflow-x:auto"></div>
+          <div id="sector-evo-legend" style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap;font-size:.75rem"></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="card-header">
+          <span class="card-title">Distribución de la cartera</span>
+        </div>
+        <div style="padding:1rem 1.5rem 0">
+          <div style="display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap">
+            <button class="btn btn-sm btn-primary" id="dist-tab-sector" onclick="setDistView('sector')" style="flex:1">Sector</button>
+            <button class="btn btn-sm" id="dist-tab-subsector" onclick="setDistView('subsector')" style="flex:1">Subsector</button>
+          </div>
+        </div>
+        <div id="distribution-list" style="padding:0 1.5rem 1.5rem"></div>
+      </div>
+    </div>
+
+    <!-- MOVIMIENTOS -->
+    <div class="section" id="sec-movimientos">
+      <div class="page-header">
+        <div class="page-title">Movimientos</div>
+        <div class="page-sub">Historial completo de operaciones</div>
+      </div>
+      <div class="card" style="margin-bottom:1rem">
+        <div class="card-body" style="padding:1rem 1.5rem">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:.75rem;align-items:end">
+            <div class="field">
+              <label>Ticker</label>
+              <select id="mf-ticker" onchange="renderMoves()">
+                <option value="">Todos</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Tipo</label>
+              <select id="mf-tipo" onchange="renderMoves()">
+                <option value="">Todos</option>
+                <option value="compra">Compra</option>
+                <option value="venta">Venta</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Desde</label>
+              <input type="date" id="mf-desde" onchange="renderMoves()">
+            </div>
+            <div class="field">
+              <label>Hasta</label>
+              <input type="date" id="mf-hasta" onchange="renderMoves()">
+            </div>
+            <button class="btn btn-sm" onclick="clearMovesFilter()" title="Limpiar filtros" style="height:42px;white-space:nowrap">✕ Limpiar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Registros</span>
+          <span class="muted" style="margin-left:.5rem">|</span>
+          <span class="muted" id="moves-count"></span>
+          <button class="btn btn-sm btn-primary" onclick="openNuevoModal()" style="margin-left:auto;display:flex;align-items:center;gap:.4rem">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:13px;height:13px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            Añadir movimiento
+          </button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr id="moves-thead">
+              <th style="width:36px"><input type="checkbox" id="chk-all" onclick="toggleAll(this)" title="Seleccionar todo"></th>
+              <th class="th-sort" data-col="fecha" onclick="setSort('fecha')">Fecha <span class="sort-icon" id="si-fecha">↕</span></th>
+              <th>Tipo</th>
+              <th class="th-sort" data-col="ticker" onclick="setSort('ticker')">Empresa <span class="sort-icon" id="si-ticker">↕</span></th>
+              <th class="th-sort" data-col="cantidad" onclick="setSort('cantidad')">Acciones <span class="sort-icon" id="si-cantidad">↕</span></th>
+              <th class="th-sort" data-col="precio" onclick="setSort('precio')">Precio/acc. <span class="sort-icon" id="si-precio">↕</span></th>
+              <th class="th-sort" data-col="importe" onclick="setSort('importe')">Importe total <span class="sort-icon" id="si-importe">↕</span></th>
+              <th></th>
+            </tr></thead>
+            <tbody id="moves-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal nuevo movimiento -->
+    <div id="nuevo-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;align-items:center;justify-content:center" onclick="if(event.target===this)closeNuevoModal()">
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:1.75rem;width:min(560px,95vw);max-height:90vh;overflow-y:auto">
+        <div style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center">
+          <span>Nuevo movimiento</span>
+          <button onclick="closeNuevoModal()" style="background:none;border:none;color:var(--text3);font-size:1.2rem;cursor:pointer">✕</button>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Tipo de operación</label>
+            <select id="new-tipo">
+              <option value="compra">Compra</option>
+              <option value="venta">Venta</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Empresa</label>
+            <input type="text" id="new-ticker" placeholder="Ej: AAPL, NVDA, TSLA" autocomplete="off" list="ticker-suggestions">
+            <datalist id="ticker-suggestions"></datalist>
+          </div>
+          <div class="field">
+            <label>Fecha y hora</label>
+            <input type="datetime-local" id="new-fecha" step="60">
+          </div>
+          <div class="field">
+            <label>Número de acciones</label>
+            <input type="number" id="new-cantidad" placeholder="100" min="0" step="any" oninput="syncForm('cantidad')">
+          </div>
+          <div class="field">
+            <label>Precio por acción (€)</label>
+            <input type="number" id="new-precio" placeholder="150.00" min="0" step="any" oninput="syncForm('precio')">
+          </div>
+          <div class="field">
+            <label>Importe total (€)</label>
+            <input type="number" id="new-importe" placeholder="15000.00" min="0" step="any" oninput="syncForm('importe')">
+          </div>
+          <div class="field"><label>Comisión (€)</label><input type="number" id="new-comision" value="1" min="0" step="0.01"></div>
+          <input type="hidden" id="new-retencion" value="0">
+          <input type="hidden" id="new-importe-neto" value="0">
+        </div>
+        <div class="btn-row" style="margin-top:1.25rem">
+          <button class="btn" onclick="clearForm()">Limpiar</button>
+          <button class="btn btn-primary" onclick="addMovimiento()">Añadir movimiento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPORTAR -->
+    <div class="section" id="sec-opciones">
+      <div class="page-header">
+        <div class="page-title">Opciones</div>
+        <div class="page-sub">Configuración de la cuenta y la app</div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-title">Divisa y niveles</span></div>
+        <div class="card-body">
+          <div class="field" style="max-width:240px;margin-bottom:1rem">
+            <label>Tipo de cambio USD → EUR</label>
+            <input type="number" id="usd-eur-rate" value="0.92" step="0.0001" min="0"
+              oninput="saveExchangeRate(this.value)">
+          </div>
+          <div class="field" style="max-width:280px;margin-bottom:1rem">
+            <label>Visualizar niveles en</label>
+            <button class="btn" id="niveles-currency-toggle" onclick="toggleNivelesCurrency()" style="width:100%">
+              <strong id="niveles-currency-label">€</strong> — pulsa para alternar
+            </button>
+          </div>
+          <div class="field" style="max-width:240px">
+            <label>Umbral por nivel de inversión (€)</label>
+            <input type="number" id="nivel-threshold-input" value="400" step="10" min="1"
+              oninput="saveNivelThreshold(this.value)">
+            <p style="font-size:.75rem;color:var(--text3);margin-top:.5rem;line-height:1.5">
+              Cuánto capital invertido equivale a "un nivel" aplicado, usado en las alertas de Resumen. Súbelo a medida que crezca tu patrimonio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-title">Cuenta y sincronización</span></div>
+        <div class="card-body">
+          <div class="btn-row">
+            <button class="btn" onclick="syncFromCloud()">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:15px;height:15px;flex-shrink:0;margin-right:6px;vertical-align:-3px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              Sincronizar ahora
+            </button>
+            <button class="btn" id="btn-hidden" onclick="toggleHiddenMode()">
+              <svg id="eye-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:15px;height:15px;flex-shrink:0;margin-right:6px;vertical-align:-3px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <span id="hidden-label">Modo privado</span>
+            </button>
+            <button class="btn" style="color:var(--red);border-color:rgba(248,113,113,.3)" onclick="doLogout()">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:15px;height:15px;flex-shrink:0;margin-right:6px;vertical-align:-3px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+              Cerrar sesión
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-title">Copia de seguridad completa</span></div>
+        <div class="card-body">
+          <p style="font-size:.875rem;color:var(--text2);margin-bottom:1.25rem;line-height:1.6">
+            Descarga un archivo con todos tus movimientos y activos (niveles, sectores, tickers) en un único JSON. Guárdalo como red de seguridad independiente de Supabase.
+          </p>
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="exportBackupJSON()">↓ Descargar copia de seguridad</button>
+            <button class="btn" onclick="document.getElementById('backup-restore-input').click()">↑ Restaurar desde archivo</button>
+            <input type="file" id="backup-restore-input" accept=".json" style="display:none" onchange="restoreBackupJSON(event)">
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">Resetear datos</span></div>
+        <div class="card-body">
+          <p style="font-size:.875rem;color:var(--text2);margin-bottom:1.25rem;line-height:1.6">
+            Elimina todos los movimientos guardados. Esta acción no se puede deshacer.
+          </p>
+          <button class="btn" style="color:var(--red);border-color:rgba(248,113,113,.3)" onclick="resetData()">Borrar todos los datos</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Selection bar -->
+<div class="sel-bar" id="sel-bar">
+  <span class="sel-count"><span id="sel-count-n">0</span> seleccionados</span>
+  <button class="btn btn-sm" onclick="deselectAll()">Cancelar</button>
+  <button class="btn-danger-outline" onclick="deleteSelected()">Eliminar seleccionados</button>
+</div>
+
+<!-- Edit modal -->
+<div class="modal-overlay" id="edit-modal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-title">Editar movimiento</div>
+    <div class="form-grid">
+      <div class="field">
+        <label>Tipo de operacion</label>
+        <select id="edit-tipo">
+          <option value="compra">Compra</option>
+          <option value="venta">Venta</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Empresa</label>
+        <input type="text" id="edit-ticker">
+      </div>
+      <div class="field">
+        <label>Fecha y hora</label>
+        <input type="datetime-local" id="edit-fecha" step="60">
+      </div>
+      <div class="field">
+        <label>Numero de acciones</label>
+        <input type="number" id="edit-cantidad" min="0" step="any" oninput="syncEditForm('cantidad')">
+      </div>
+      <div class="field">
+        <label>Precio por accion (EUR)</label>
+        <input type="number" id="edit-precio" min="0" step="any" oninput="syncEditForm('precio')">
+      </div>
+      <div class="field">
+        <label>Importe total (EUR)</label>
+        <input type="number" id="edit-importe" min="0" step="any" oninput="syncEditForm('importe')">
+      </div>
+      <div class="field"><label>Comisión (€)</label><input type="number" id="edit-comision" min="0" step="0.01"></div>
+      <input type="hidden" id="edit-retencion" value="0">
+      <input type="hidden" id="edit-importe-neto" value="0">
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="document.getElementById('edit-modal').classList.remove('show')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveEdit()">Guardar cambios</button>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile detail modal -->
+<div class="mob-detail-overlay" id="mob-detail-overlay">
+  <div class="mob-detail-sheet" id="mob-detail-sheet">
+    <div class="mob-detail-handle" id="mob-detail-handle"></div>
+    <div class="mob-detail-title">
+      <span id="mob-detail-ticker"></span>
+      <button onclick="closeMobDetailSheet()" style="background:none;border:none;color:var(--text3);font-size:1.2rem;cursor:pointer;padding:0">✕</button>
+    </div>
+    <div id="mob-detail-body"></div>
+  </div>
+</div>
+
+<!-- Login overlay -->
+<div id="login-overlay" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;align-items:center;justify-content:center">
+  <div style="width:min(360px,90vw);background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:2rem">
+    <div style="font-size:1.1rem;font-weight:700;margin-bottom:.25rem;text-align:center">Portfolio</div>
+    <div class="muted" style="text-align:center;margin-bottom:1.5rem;font-size:.8rem">Inicia sesión para continuar</div>
+    <form id="login-form" method="post" action="#" onsubmit="event.preventDefault(); doLogin();" autocomplete="on">
+      <div class="field" style="margin-bottom:.75rem">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" name="email" autocomplete="email" placeholder="tu@email.com">
+      </div>
+      <div class="field" style="margin-bottom:1rem">
+        <label for="login-password">Contraseña</label>
+        <input type="password" id="login-password" name="password" autocomplete="current-password" placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%">Entrar</button>
+    </form>
+    <div id="login-error" style="color:var(--red);font-size:.8rem;margin-top:.75rem;text-align:center"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── Supabase config ───────────────────────────────────────────────────────────
+const SB_URL = 'https://lrbpkggwtdddfcoinhfh.supabase.co';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyYnBrZ2d3dGRkZGZjb2luaGZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NTE0MzAsImV4cCI6MjA5NjQyNzQzMH0.vr1F4y0p7XrxhWdUMCIanmQQQwaff99kKllu76a7WZI';
+const FINNHUB_KEY = 'd8qijt1r01qr03njc5j0d8qijt1r01qr03njc5jg';
+// Cuánto capital invertido equivale a "un nivel" aplicado. Configurable en Opciones.
+let NIVEL_THRESHOLD_EUR = parseFloat(localStorage.getItem('pf_nivel_threshold')) || 400;
+
+let sbSession = JSON.parse(localStorage.getItem('pf_session') || 'null');
+
+function sbHeaders() {
+  const token = sbSession?.access_token || SB_KEY;
+  return {
+    'Content-Type': 'application/json',
+    'apikey': SB_KEY,
+    'Authorization': 'Bearer ' + token,
+    'Prefer': 'return=minimal'
+  };
+}
+
+async function sbAuthFetch(path, options = {}) {
+  const res = await fetch(SB_URL + '/auth/v1/' + path, {
+    headers: { 'Content-Type': 'application/json', 'apikey': SB_KEY },
+    ...options
+  });
+  const text = await res.text();
+  const data = text ? JSON.parse(text) : null;
+  if (!res.ok) throw new Error(data?.error_description || data?.msg || 'Error de autenticación');
+  return data;
+}
+
+async function tryRefreshSession() {
+  if (!sbSession?.refresh_token) return false;
+  try {
+    const data = await sbAuthFetch('token?grant_type=refresh_token', {
+      method: 'POST',
+      body: JSON.stringify({ refresh_token: sbSession.refresh_token })
+    });
+    sbSession = data;
+    localStorage.setItem('pf_session', JSON.stringify(data));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function doLogin() {
+  const email = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  const errEl = document.getElementById('login-error');
+  errEl.textContent = '';
+  if (!email || !password) { errEl.textContent = 'Rellena email y contraseña'; return; }
+  try {
+    const data = await sbAuthFetch('token?grant_type=password', {
+      method: 'POST',
+      body: JSON.stringify({ email, password })
+    });
+    sbSession = data;
+    localStorage.setItem('pf_session', JSON.stringify(data));
+    document.getElementById('login-overlay').style.display = 'none';
+    syncFromCloud().then(() => migrateTipoEmpresa());
+  } catch(e) {
+    errEl.textContent = 'Email o contraseña incorrectos';
+  }
+}
+
+function doLogout() {
+  if (!confirm('¿Cerrar sesión?')) return;
+  clearSession();
+}
+
+let sessionExpiredNotified = false;
+function clearSession(showExpiredMsg = false) {
+  sbSession = null;
+  localStorage.removeItem('pf_session');
+  document.getElementById('login-overlay').style.display = 'flex';
+  document.getElementById('login-password').value = '';
+  if (showExpiredMsg && !sessionExpiredNotified) {
+    sessionExpiredNotified = true;
+    showToast('Tu sesión ha caducado, vuelve a iniciar sesión', 'error');
+    setTimeout(() => { sessionExpiredNotified = false; }, 3000);
+  }
+}
+
+async function requireLogin() {
+  if (!sbSession?.access_token) {
+    document.getElementById('login-overlay').style.display = 'flex';
+    return false;
+  }
+  return true;
+}
+
+async function sbFetch(path, options = {}, _retried = false) {
+  const { headers: extraHeaders, ...rest } = options;
+  const mergedHeaders = { ...sbHeaders(), ...extraHeaders };
+  const res = await fetch(SB_URL + '/rest/v1/' + path, { headers: mergedHeaders, ...rest });
+  if (res.status === 401) {
+    if (!_retried && await tryRefreshSession()) {
+      return sbFetch(path, options, true);
+    }
+    clearSession(true);
+    throw new Error('Sesión caducada, vuelve a iniciar sesión');
+  }
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(err);
+  }
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
+}
+
+async function syncFromCloud() {
+  showSyncStatus('Cargando desde la nube…');
+  try {
+    const [movData, empData] = await Promise.all([
+      sbFetch('movimientos?select=*&order=Fecha.asc'),
+      sbFetch('Empresas?select=*&order=Ticker.asc')
+    ]);
+    moves = movData.map(r => ({
+      tipo: r.Tipo, ticker: r.Nombre, fecha: r.Fecha,
+      cantidad: r.Cantidad, precio: r.Precio, importe: r.Importe,
+      retencion: r.Retencion || 0, commission: r.Commission ?? 0,
+      _sbid: r.id
+    }));
+    empresas = empData.map(r => ({
+      id: r.id, ticker: r.Ticker, nombre: r.Nombre || '', sector: r.Sector || '',
+      subsector: r.Subsector || '',
+      tipo: r.Tipo || '',
+      nivel1: r.Nivel1 || null, nivel2: r.Nivel2 || null,
+      nivel3: r.Nivel3 || null, nivel4: r.Nivel4 || null,
+      nivel_extra: r.Nivel_extra || null, venta_deseada: r.Venta_deseada || null
+    }));
+    localStorage.setItem('pf_moves', JSON.stringify(moves));
+    localStorage.setItem('pf_empresas', JSON.stringify(empresas));
+    renderAll();
+    showSyncStatus('✓ Sincronizado', 'ok');
+  } catch(e) {
+    showSyncStatus('Error al cargar: ' + e.message, 'err');
+  }
+}
+
+async function save() {
+  localStorage.setItem('pf_moves', JSON.stringify(moves));
+  try {
+    await sbFetch('movimientos?Nombre=neq.____NOOP____', { method: 'DELETE' });
+    if (moves.length > 0) {
+      const rows = moves.map(m => ({
+        Nombre: m.ticker, Tipo: m.tipo, Fecha: m.fecha,
+        Cantidad: m.cantidad, Precio: m.precio, Importe: m.importe,
+        Retencion: m.retencion || 0, Commission: m.commission ?? 0
+      }));
+      await sbFetch('movimientos', { method: 'POST', body: JSON.stringify(rows) });
+    }
+    showSyncStatus('✓ Guardado en la nube', 'ok');
+  } catch(e) {
+    showSyncStatus('⚠ Solo guardado local: ' + e.message, 'err');
+  }
+}
+
+function showSyncStatus(msg, type) {
+  const el = document.getElementById('sync-status');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.color = type === 'ok' ? 'var(--green)' : type === 'err' ? 'var(--red)' : 'var(--text3)';
+  if (type) setTimeout(() => { el.textContent = ''; }, 3000);
+}
+
+// ── Data ──────────────────────────────────────────────────────────────────────
+let moves = JSON.parse(localStorage.getItem('pf_moves') || '[]');
+let empresas = JSON.parse(localStorage.getItem('pf_empresas') || '[]');
+let usdEurRate = parseFloat(localStorage.getItem('pf_usd_eur_rate')) || 0.92;
+let nivelesCurrency = localStorage.getItem('pf_niveles_currency') || 'EUR'; // 'EUR' | 'USD'
+
+let editingEmpresaId = null;
+let activeFilter = 'todos';
+let sortCol = 'fecha';
+let sortDir = 'desc';
+let closedSortCol='ticker', closedSortDir='asc';
+let openSortCol='ticker', openSortDir='asc';
+const openExpandedRows = new Set();
+function toggleOpenRow(ticker) {
+  if (openExpandedRows.has(ticker)) openExpandedRows.delete(ticker);
+  else openExpandedRows.add(ticker);
+  renderOpen();
+}
+
+// ── Formatting ────────────────────────────────────────────────────────────────
+const fmtEurRaw = n => new Intl.NumberFormat('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n) + ' €';
+const fmtEur = n => `<span class="money">${fmtEurRaw(n)}</span>`;
+const fmtNum = n => new Intl.NumberFormat('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 4 }).format(n);
+const fmtPct = n => (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
+
+function fmtDate(d) {
+  if (!d) return '—';
+  const [datePart, timePart] = d.split('T');
+  const p = datePart.split('-');
+  if (p.length !== 3) return d;
+  const dateStr = `${p[2]}/${p[1]}/${p[0]}`;
+  if (timePart && timePart !== '00:00' && timePart !== '00:00:00') {
+    return `${dateStr} ${timePart.substring(0,5)}`;
+  }
+  return dateStr;
+}
+
+function daysBetween(d1, d2) {
+  return Math.round((new Date(d2) - new Date(d1)) / 86400000);
+}
+
+function formatDuration(days) {
+  if (days < 1) return '< 1 día';
+  if (days === 1) return '1 día';
+  if (days < 30) return days + ' días';
+  if (days < 365) { const m = Math.round(days / 30); return m + (m === 1 ? ' mes' : ' meses'); }
+  const y = Math.floor(days / 365), m = Math.round((days % 365) / 30);
+  return y + (y === 1 ? ' año' : ' años') + (m > 0 ? ' ' + m + (m === 1 ? ' mes' : ' meses') : '');
+}
+
+// ── FIFO Calculation ──────────────────────────────────────────────────────────
+function calcFIFO() {
+  const byTicker = {};
+  moves.forEach(m => {
+    if (!byTicker[m.ticker]) byTicker[m.ticker] = [];
+    byTicker[m.ticker].push({ ...m });
+  });
+  const closed = [], open = [];
+  Object.keys(byTicker).forEach(t => {
+    const ops = byTicker[t].slice().sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+    // Total real de comisiones = suma de todos los movimientos del ticker (independiente del FIFO)
+    const tickerTotalCommission = ops.reduce((s, op) => s + (op.commission ?? 0), 0);
+    const queue = [];
+    ops.forEach(op => {
+      if (op.tipo === 'compra') {
+        queue.push({ date: op.fecha, qty: op.cantidad, price: op.precio, commission: op.commission??0 });
+      } else {
+        let rem = op.cantidad;
+        while (rem > 0 && queue.length > 0) {
+          const buy = queue[0];
+          const matched = Math.min(buy.qty, rem);
+          const rawProfit = (op.precio - buy.price) * matched;
+          closed.push({
+            ticker: t,
+            qty: matched,
+            buyDate: buy.date,
+            sellDate: op.fecha,
+            buyPrice: buy.price,
+            sellPrice: op.precio,
+            commission: 0,
+            profit: rawProfit,
+            pct: ((op.precio - buy.price) / buy.price) * 100,
+            days: daysBetween(buy.date, op.fecha),
+            tickerTotalCommission
+          });
+          buy.qty -= matched;
+          rem -= matched;
+          if (buy.qty <= 0) queue.shift();
+        }
+      }
+    });
+    if (queue.length > 0) {
+      const totalQty = queue.reduce((s, b) => s + b.qty, 0);
+      const avgPrice = queue.reduce((s, b) => s + b.price * b.qty, 0) / totalQty;
+      open.push({ ticker: t, qty: totalQty, avgPrice, total: totalQty * avgPrice, lots: queue.map(b => ({ ...b })), tickerTotalCommission });
+    }
+  });
+  return { closed, open };
+}
+
+// ── Hidden mode ──────────────────────────────────────────────────────────────
+let hiddenMode = false;
+function toggleHiddenMode() {
+  hiddenMode = !hiddenMode;
+  document.body.classList.toggle('hidden-mode', hiddenMode);
+  const btn = document.getElementById('btn-hidden');
+  const label = document.getElementById('hidden-label');
+  const icon = document.getElementById('eye-icon');
+  const eyeOpen = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>';
+  const eyeClosed = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>';
+  if (btn) btn.classList.toggle('active', hiddenMode);
+  if (label) label.textContent = hiddenMode ? 'Modo privado ON' : 'Modo privado';
+  if (icon) icon.innerHTML = hiddenMode ? eyeClosed : eyeOpen;
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function renderAll() {
+  renderStats();
+  renderFilters();
+  renderClosed();
+  renderOpen();
+  renderEmpresas();
+  renderMoves();
+  setResumenView(resumenView);
+  initLevelAlertsBanner();
+}
+
+function initLevelAlertsBanner() {
+  const banner = document.getElementById('level-alerts-banner');
+  if (!banner || banner.dataset.checked === 'true') return; // no repetir si ya se comprobó en esta sesión
+  const { open } = calcFIFO();
+  const hasTargets = open.some(o => {
+    const emp = empresas.find(e => e.nombre === o.ticker);
+    if (!emp?.ticker || (emp.tipo && emp.tipo !== 'Empresa')) return false;
+    return [emp.venta_deseada, emp.nivel1, emp.nivel2, emp.nivel3, emp.nivel4, emp.nivel_extra].some(v => v != null && v !== '');
+  });
+  if (!hasTargets) { banner.style.display = 'none'; return; }
+  banner.style.display = '';
+  banner.innerHTML = `<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem">
+    <span style="font-size:.8rem;color:var(--text3)">Tienes empresas con niveles definidos</span>
+    <button class="btn btn-sm" onclick="this.closest('#level-alerts-banner').dataset.checked='true'; checkLevelAlerts()" style="font-size:.75rem">⚡ Comprobar niveles</button>
+  </div>`;
+}
+
+function renderStats() {
+  const { closed, open } = calcFIFO();
+  // Beneficio real = rawProfit de los pares FIFO - comisiones reales por ticker (una vez cada una)
+  const seenTickers = new Set();
+  let totalRealCommission = 0;
+  closed.forEach(c => {
+    if (!seenTickers.has(c.ticker)) {
+      seenTickers.add(c.ticker);
+      totalRealCommission += c.tickerTotalCommission || 0;
+    }
+  });
+  const rawProfit = closed.reduce((s, c) => s + c.profit, 0);
+  const profit = rawProfit - totalRealCommission;
+  const invested = open.reduce((s, o) => s + o.total, 0);
+  // "win" = beneficio del par FIFO sin comisión (la comisión se descuenta a nivel ticker)
+  const wins = closed.filter(c => c.profit > 0).length;
+  const wr = closed.length > 0 ? (wins / closed.length * 100).toFixed(0) + '%' : '—';
+
+  const totalInvested = moves.filter(m => m.tipo === 'compra').reduce((s, m) => s + (m.importe || 0), 0);
+  const roiPct = totalInvested > 0 ? (profit / totalInvested) * 100 : 0;
+
+  document.getElementById('stats-grid').innerHTML = `
+    <div class="stat-card" onclick="openProfitHistory()" style="cursor:pointer"><div class="stat-label">Beneficio realizado</div><div class="stat-value ${profit >= 0 ? 'pos' : 'neg'}">${fmtEur(profit)}</div></div>
+    <div class="stat-card" onclick="setResumenView('closed')" style="cursor:pointer"><div class="stat-label">Ops. cerradas</div><div class="stat-value neutral">${closed.length}</div></div>
+    <div class="stat-card" onclick="openInvestedBreakdown()" style="cursor:pointer"><div class="stat-label">Total invertido</div><div class="stat-value neutral">${fmtEur(totalInvested)}</div></div>
+    <div class="stat-card"><div class="stat-label">Rentab. s/ invertido</div><div class="stat-value ${roiPct >= 0 ? 'pos' : 'neg'}">${fmtPct(roiPct)}</div></div>
+    <div class="stat-card" onclick="setResumenView('open')" style="cursor:pointer"><div class="stat-label">Posiciones abiertas</div><div class="stat-value neutral">${open.length}</div></div>
+    <div class="stat-card"><div class="stat-label">Capital invertido</div><div class="stat-value neutral">${fmtEur(invested)}</div></div>
+  `;
+
+  const now = new Date();
+  document.getElementById('summary-date').textContent = now.toLocaleDateString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function renderFilters() {
+  // Update datalist for ticker autocomplete in add form
+  const tickers = [...new Set(moves.map(m => m.ticker))].sort();
+  const dl = document.getElementById('ticker-suggestions');
+  if (dl) dl.innerHTML = tickers.map(t => `<option value="${t}">`).join('');
+  // Restore search input value if any
+  const searchEl = document.getElementById('ticker-search');
+  if (searchEl && activeFilter !== 'todos') searchEl.value = activeFilter;
+}
+
+let resumenView = localStorage.getItem('pf_resumen_view') || 'closed';
+function setResumenView(view) {
+  resumenView = view;
+  localStorage.setItem('pf_resumen_view', view);
+  document.getElementById('closed-card').style.display = view === 'closed' ? '' : 'none';
+  document.getElementById('open-card').style.display = view === 'open' ? '' : 'none';
+  document.getElementById('global-card').style.display = view === 'global' ? '' : 'none';
+  document.getElementById('filter-pills').style.display = view === 'global' ? 'none' : '';
+  document.getElementById('toggle-closed-btn').classList.toggle('btn-primary', view === 'closed');
+  document.getElementById('toggle-open-btn').classList.toggle('btn-primary', view === 'open');
+  document.getElementById('toggle-global-btn').classList.toggle('btn-primary', view === 'global');
+  if (view === 'global') renderGlobalView();
+}
+
+// ── Vista Global: cuadrados por beneficio realizado ────────────────────────────
+function renderGlobalView() {
+  const { closed, open } = calcFIFO();
+  const openNames = new Set(open.map(o => o.ticker));
+
+  // Beneficio realizado neto por empresa (rawProfit - comisión real, una vez por empresa)
+  const byCompany = {};
+  closed.forEach(c => {
+    if (!byCompany[c.ticker]) byCompany[c.ticker] = { rawProfit: 0, commission: c.tickerTotalCommission || 0 };
+    byCompany[c.ticker].rawProfit += c.profit;
+  });
+  const companies = Object.entries(byCompany).map(([nombre, d]) => {
+    const emp = empresas.find(e => e.nombre === nombre);
+    return {
+      nombre,
+      profit: d.rawProfit - d.commission,
+      sector: emp?.sector || '',
+      tipo: emp?.tipo || '',
+      noSale: false,
+      hasOpenPos: openNames.has(nombre)
+    };
+  });
+
+  // Empresas con posición abierta pero sin ninguna venta todavía (sin beneficio que mostrar)
+  const closedNames = new Set(companies.map(c => c.nombre));
+  open.forEach(o => {
+    if (closedNames.has(o.ticker)) return;
+    const emp = empresas.find(e => e.nombre === o.ticker);
+    companies.push({
+      nombre: o.ticker,
+      profit: 0,
+      sector: emp?.sector || '',
+      tipo: emp?.tipo || '',
+      noSale: true,
+      hasOpenPos: true
+    });
+  });
+
+  const countEl = document.getElementById('global-count');
+  if (countEl) countEl.textContent = companies.length + ' empresas';
+
+  const gridEl = document.getElementById('global-grid');
+  if (!companies.length) {
+    gridEl.innerHTML = '<div class="empty" style="width:100%"><div class="empty-icon">○</div>Sin empresas todavía</div>';
+    return;
+  }
+
+  // Size-based packing: no explicit sort needed, shelf packing handles layout
+
+  const maxAbs = Math.max(...companies.map(c => Math.abs(c.profit)), 1);
+  const GAP = 16; // matches gap:1rem
+  const containerWidth = gridEl.clientWidth || gridEl.parentElement.clientWidth || 600;
+  // Garantiza que al menos 2 cuadrados del tamaño máximo quepan en una fila
+  const MAX_SIZE = Math.max(110, Math.min(220, Math.floor((containerWidth - GAP) / 2)));
+  const MIN_SIZE = Math.round(MAX_SIZE * 0.4);
+
+  // Calcula el tamaño de cada cuadrado (área proporcional al beneficio absoluto).
+  // Las empresas sin venta todavía usan el tamaño mínimo, ya que no hay beneficio que comunicar.
+  const items = companies.map(c => {
+    if (c.noSale) return { ...c, size: MIN_SIZE };
+    const ratio = Math.sqrt(Math.abs(c.profit) / maxAbs);
+    const size = Math.round(MIN_SIZE + ratio * (MAX_SIZE - MIN_SIZE));
+    return { ...c, size };
+  });
+
+  // Empaquetado por estantes (shelf packing): en cada fila, rellena el ancho
+  // disponible eligiendo entre los restantes el que mejor encaje, sin dejar huecos.
+  // El orden de inserción ya no importa para el layout visual; el tamaño comunica el ranking.
+  const remaining = items.slice();
+  const rows = [];
+  while (remaining.length) {
+    const row = [];
+    let usedWidth = 0;
+    // Primer elemento de la fila: el más grande restante (ancla la altura del estante)
+    let idx = 0;
+    for (let i = 1; i < remaining.length; i++) if (remaining[i].size > remaining[idx].size) idx = i;
+    row.push(remaining.splice(idx, 1)[0]);
+    usedWidth = row[0].size;
+    // Rellena el resto del ancho con el mejor candidato que quepa en el hueco restante
+    let improved = true;
+    while (improved && remaining.length) {
+      const freeWidth = containerWidth - usedWidth - GAP * row.length;
+      if (freeWidth < MIN_SIZE) break;
+      let bestIdx = -1, bestSize = -1;
+      for (let i = 0; i < remaining.length; i++) {
+        if (remaining[i].size <= freeWidth && remaining[i].size > bestSize) { bestSize = remaining[i].size; bestIdx = i; }
+      }
+      if (bestIdx === -1) { improved = false; break; }
+      row.push(remaining.splice(bestIdx, 1)[0]);
+      usedWidth += bestSize;
+    }
+    rows.push(row);
+  }
+
+  gridEl.style.display = 'flex';
+  gridEl.style.flexDirection = 'column';
+  gridEl.style.gap = GAP + 'px';
+
+  gridEl.innerHTML = rows.map(row => {
+    const rowHtml = row.map(c => {
+      const size = c.size;
+      const isPos = c.profit >= 0;
+      const bg = c.noSale ? 'var(--surface2)' : (isPos ? 'rgba(74,222,128,.12)' : 'rgba(248,113,113,.12)');
+      const border = c.noSale ? 'var(--border2)' : (isPos ? 'rgba(74,222,128,.4)' : 'rgba(248,113,113,.4)');
+      const textColor = c.noSale ? 'var(--text3)' : (isPos ? 'var(--green)' : 'var(--red)');
+      const fontSize = Math.max(11, Math.round(size * 0.11));
+      const valFontSize = Math.max(10, Math.round(size * 0.1));
+      const valueLine = c.noSale
+        ? `<div style="font-size:${valFontSize}px;color:var(--text3);margin-top:.25rem;font-weight:500">Sin venta</div>`
+        : `<div class="money" style="font-size:${valFontSize}px;font-family:var(--mono);color:${textColor};margin-top:.25rem;font-weight:600">${isPos ? '+' : ''}${fmtEurRaw(c.profit)}</div>`;
+      const openBar = c.hasOpenPos
+        ? `<div style="position:absolute;left:0;right:0;bottom:0;height:4px;background:#facc15;border-radius:0 0 12px 12px"></div>`
+        : '';
+      return `<div onclick="openCompanyDetail('${c.nombre.replace(/'/g, "\\'")}')"
+        style="position:relative;width:${size}px;height:${size}px;flex-shrink:0;background:${bg};border:1.5px solid ${border};border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s;text-align:center;padding:.5rem;box-sizing:border-box;overflow:hidden"
+        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="font-size:${fontSize}px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;color:var(--text)">${c.nombre}</div>
+        ${valueLine}
+        ${openBar}
+      </div>`;
+    }).join('');
+    return `<div style="display:flex;gap:${GAP}px;justify-content:center">${rowHtml}</div>`;
+  }).join('');
+}
+
+// ── Precio en tiempo real (Finnhub, bajo demanda) ──────────────────────────────
+// Núcleo compartido: consulta Finnhub y rellena cualquier par btn/resultEl dado
+// ── Detección automática de sector vía Finnhub (perfil de empresa) ────────────
+// Mapea las industrias granulares de Finnhub a la lista cerrada de sectores de la app
+const FINNHUB_INDUSTRY_TO_SECTOR = {
+  'Technology': 'Tecnología',
+  'Semiconductors': 'Tecnología',
+  'Software': 'Tecnología',
+  'Communications': 'Servicios de comunicación',
+  'Media': 'Servicios de comunicación',
+  'Telecommunication Equipment': 'Servicios de comunicación',
+  'Telecommunications Services': 'Servicios de comunicación',
+  'Internet': 'Servicios de comunicación',
+  'Biotechnology': 'Salud',
+  'Pharmaceuticals': 'Salud',
+  'Health Care': 'Salud',
+  'Healthcare': 'Salud',
+  'Medical': 'Salud',
+  'Banking': 'Finanzas',
+  'Financial Services': 'Finanzas',
+  'Insurance': 'Finanzas',
+  'Investment': 'Finanzas',
+  'Asset Management': 'Finanzas',
+  'Retail': 'Consumo discrecional',
+  'Hotels, Restaurants & Leisure': 'Consumo discrecional',
+  'Hospitality': 'Consumo discrecional',
+  'Auto': 'Consumo discrecional',
+  'Apparel': 'Consumo discrecional',
+  'Leisure Products': 'Consumo discrecional',
+  'Food': 'Consumo básico',
+  'Food & Beverages': 'Consumo básico',
+  'Beverages': 'Consumo básico',
+  'Tobacco': 'Consumo básico',
+  'Household Products': 'Consumo básico',
+  'Oil & Gas': 'Energía',
+  'Energy': 'Energía',
+  'Renewable Energy': 'Energía',
+  'Industrial Goods': 'Industrial',
+  'Industrials': 'Industrial',
+  'Aerospace': 'Industrial',
+  'Transportation': 'Industrial',
+  'Airlines': 'Industrial',
+  'Construction': 'Industrial',
+  'Machinery': 'Industrial',
+  'Metals & Mining': 'Materiales',
+  'Chemicals': 'Materiales',
+  'Materials': 'Materiales',
+  'Paper': 'Materiales',
+  'Real Estate': 'Inmobiliario',
+  'REIT': 'Inmobiliario',
+  'Utilities': 'Utilities'
+};
+
+function mapFinnhubIndustryToSector(industry) {
+  if (!industry) return null;
+  // Coincidencia exacta primero
+  if (FINNHUB_INDUSTRY_TO_SECTOR[industry]) return FINNHUB_INDUSTRY_TO_SECTOR[industry];
+  // Si no, busca por inclusión de palabra clave (Finnhub a veces da nombres compuestos)
+  const lower = industry.toLowerCase();
+  for (const [key, sector] of Object.entries(FINNHUB_INDUSTRY_TO_SECTOR)) {
+    if (lower.includes(key.toLowerCase())) return sector;
+  }
+  return null;
+}
+
+async function detectSector() {
+  const ticker = document.getElementById('em-ticker').value.trim().toUpperCase();
+  const btn = document.getElementById('detect-sector-btn');
+  if (!ticker) { showToast('Escribe primero el ticker bursátil', 'error'); return; }
+
+  btn.disabled = true;
+  const originalText = btn.textContent;
+  btn.textContent = '…';
+
+  try {
+    const res = await fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${encodeURIComponent(ticker)}&token=${FINNHUB_KEY}`);
+    if (!res.ok) throw new Error('Error de red');
+    const data = await res.json();
+
+    if (!data || !data.finnhubIndustry) {
+      showToast(`Sin datos de sector para ${ticker}`, 'error');
+      return;
+    }
+
+    // El subsector se rellena siempre con la industria exacta de Finnhub, aunque no tenga mapeo de sector
+    document.getElementById('em-subsector').value = data.finnhubIndustry;
+
+    const sector = mapFinnhubIndustryToSector(data.finnhubIndustry);
+    if (!sector) {
+      showToast(`Subsector "${data.finnhubIndustry}" detectado, pero sin mapeo de sector — selecciona el sector manualmente`, 'error');
+      return;
+    }
+
+    document.getElementById('em-sector').value = sector;
+    showToast(`Sector: ${sector} · Subsector: ${data.finnhubIndustry}`, 'success');
+  } catch (e) {
+    showToast('No se pudo detectar el sector', 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalText;
+  }
+}
+
+async function fetchLivePriceCore(nombre, btn, resultEl, btnLabel) {
+  const emp = empresas.find(e => e.nombre === nombre);
+
+  if (!emp?.ticker) {
+    if (resultEl) resultEl.innerHTML = `<div style="font-size:.78rem;color:var(--text3)">Añade el ticker bursátil en Activos para consultar el precio</div>`;
+    return;
+  }
+
+  if (btn) { btn.disabled = true; btn.textContent = '…'; }
+  if (resultEl) resultEl.innerHTML = `<span style="color:var(--text3)">Consultando…</span>`;
+
+  try {
+    const res = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(emp.ticker)}&token=${FINNHUB_KEY}`);
+    if (!res.ok) throw new Error('Error de red');
+    const data = await res.json();
+
+    // Finnhub devuelve c=0 y campos vacíos cuando el símbolo no existe o no hay datos
+    if (!data || data.c === 0 || data.c == null) {
+      resultEl.innerHTML = `<div style="font-size:.78rem;color:var(--text3)">Sin datos para ${emp.ticker} (puede no estar cubierto en el plan gratuito)</div>`;
+      return;
+    }
+
+    const priceUsd = data.c; // precio actual, normalmente en USD
+    const priceEur = priceUsd * (usdEurRate || 0.92);
+
+    const { open } = calcFIFO();
+    const pos = open.find(o => o.ticker === nombre);
+
+    let html = `<div class="mob-op-row"><span class="mob-op-label">Precio actual</span><span class="mono money">${fmtEurRaw(priceEur)}</span></div>`;
+
+    if (pos) {
+      const valorActual = priceEur * pos.qty;
+      const benefLatente = valorActual - pos.total;
+      const pctLatente = pos.total > 0 ? (benefLatente / pos.total) * 100 : 0;
+      const isPos = benefLatente >= 0;
+      html += `<div class="mob-op-row"><span class="mob-op-label">Valor posición</span><span class="mono money">${fmtEurRaw(valorActual)}</span></div>
+        <div class="mob-op-row"><span class="mob-op-label">Beneficio latente</span><span class="mono money" style="color:${isPos?'var(--green)':'var(--red)'};font-weight:600">${isPos?'+':''}${fmtEurRaw(benefLatente)} (${fmtPct(pctLatente)})</span></div>`;
+    }
+
+    // Indicador de nivel: compara el precio actual con los niveles definidos de la empresa
+    const niveles = [
+      { label: 'Venta deseada', val: emp.venta_deseada },
+      { label: 'Nivel 1', val: emp.nivel1 },
+      { label: 'Nivel 2', val: emp.nivel2 },
+      { label: 'Nivel 3', val: emp.nivel3 },
+      { label: 'Nivel 4', val: emp.nivel4 },
+      { label: 'Nivel Extra', val: emp.nivel_extra }
+    ].filter(n => n.val != null && n.val !== '');
+
+    if (niveles.length) {
+      // Nivel más cercano al precio actual (en valor absoluto de distancia %)
+      let closest = niveles[0];
+      let closestDist = Math.abs(priceEur - closest.val) / closest.val;
+      niveles.forEach(n => {
+        const dist = Math.abs(priceEur - n.val) / n.val;
+        if (dist < closestDist) { closest = n; closestDist = dist; }
+      });
+      const distPct = ((priceEur - closest.val) / closest.val) * 100;
+      const above = distPct >= 0;
+      const veryClose = Math.abs(distPct) < 2;
+      const levelColor = veryClose ? 'var(--accent)' : (above ? 'var(--green)' : 'var(--text3)');
+      const levelIcon = veryClose ? '●' : (above ? '▲' : '▼');
+
+      html += `<div style="margin-top:.6rem;padding-top:.6rem;border-top:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:.4rem;font-size:.78rem">
+          <span style="color:${levelColor}">${levelIcon}</span>
+          <span style="color:var(--text3)">Más cerca de</span>
+          <span style="font-weight:600">${closest.label}</span>
+          <span class="mono" style="color:${levelColor};margin-left:auto">${above ? '+' : ''}${distPct.toFixed(1)}%</span>
+        </div>
+      </div>`;
+    }
+
+    html += `<div style="font-size:.6rem;color:var(--text3);margin-top:.4rem">Vía Finnhub · puede no reflejar el mercado exacto</div>`;
+    resultEl.innerHTML = html;
+  } catch (e) {
+    resultEl.innerHTML = `<div style="font-size:.78rem;color:var(--red)">No se pudo consultar el precio</div>`;
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = btnLabel; }
+  }
+}
+
+async function fetchLivePrice(nombre) {
+  const btn = document.getElementById('live-price-btn');
+  const resultEl = document.getElementById('live-price-result');
+  if (resultEl) resultEl.style.cssText = 'margin-top:.6rem;padding-top:.6rem;border-top:1px solid var(--border)';
+  await fetchLivePriceCore(nombre, btn, resultEl, '↻ Ver precio actual');
+}
+
+// Variante para la fila/ficha de Posiciones abiertas (desktop expandible o modal móvil)
+async function fetchLivePriceOpenRow(nombre, isMobileSheet) {
+  const safeId = nombre.replace(/[^a-zA-Z0-9]/g,'_');
+  const btn = document.getElementById(isMobileSheet ? 'live-price-btn-mob' : ('live-price-btn-' + safeId));
+  const resultEl = document.getElementById(isMobileSheet ? 'live-price-result-mob' : ('live-price-result-' + safeId));
+  await fetchLivePriceCore(nombre, btn, resultEl, '↻ Ver');
+}
+
+// Consulta el precio de todas las posiciones abiertas de tipo "Empresa" de golpe
+function closeAllPrices() {
+  document.getElementById('all-prices-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+async function fetchAllOpenPrices() {
+  const btn = document.getElementById('refresh-all-prices-btn');
+  const summaryEl = document.getElementById('all-prices-summary');
+  const { open } = calcFIFO();
+
+  document.getElementById('all-prices-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  // Solo empresas (tipo "Empresa" o sin tipo asignado) que tengan ticker bursátil configurado
+  const targets = open
+    .map(o => ({ pos: o, emp: empresas.find(e => e.nombre === o.ticker) }))
+    .filter(({ emp }) => emp?.ticker && (!emp.tipo || emp.tipo === 'Empresa'));
+
+  if (!targets.length) {
+    summaryEl.innerHTML = `<div style="font-size:.8rem;color:var(--text3)">No hay empresas con ticker configurado entre tus posiciones abiertas</div>`;
+    return;
+  }
+
+  if (btn) { btn.disabled = true; btn.textContent = 'Consultando…'; }
+  summaryEl.innerHTML = `<div style="font-size:.8rem;color:var(--text3)">Consultando ${targets.length} empresa${targets.length !== 1 ? 's' : ''}…</div>`;
+
+  const results = await Promise.all(targets.map(async ({ pos, emp }) => {
+    try {
+      const res = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(emp.ticker)}&token=${FINNHUB_KEY}`);
+      if (!res.ok) return { pos, emp, ok: false };
+      const data = await res.json();
+      if (!data || data.c === 0 || data.c == null) return { pos, emp, ok: false };
+      const priceEur = data.c * (usdEurRate || 0.92);
+      const valorActual = priceEur * pos.qty;
+      const benefLatente = valorActual - pos.total;
+      return { pos, emp, ok: true, priceEur, valorActual, benefLatente };
+    } catch {
+      return { pos, emp, ok: false };
+    }
+  }));
+
+  const found = results.filter(r => r.ok);
+  const failed = results.filter(r => !r.ok);
+
+  if (!found.length) {
+    summaryEl.innerHTML = `<div style="font-size:.8rem;color:var(--text3)">No se pudo obtener precio de ninguna empresa</div>`;
+  } else {
+    const totalInvertido = found.reduce((s, r) => s + r.pos.total, 0);
+    const totalValor = found.reduce((s, r) => s + r.valorActual, 0);
+    const totalBenef = totalValor - totalInvertido;
+    const isPos = totalBenef >= 0;
+    const pct = totalInvertido > 0 ? (totalBenef / totalInvertido) * 100 : 0;
+
+    summaryEl.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:1rem">
+        <div>
+          <div style="font-size:.7rem;color:var(--text3)">Valor actual (${found.length}/${targets.length} empresas)</div>
+          <div class="money" style="font-size:1.15rem;font-weight:700;font-family:var(--mono)">${fmtEurRaw(totalValor)}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:.7rem;color:var(--text3)">Beneficio latente</div>
+          <div class="money" style="font-size:1.15rem;font-weight:700;font-family:var(--mono);color:${isPos?'var(--green)':'var(--red)'}">${isPos?'+':''}${fmtEurRaw(totalBenef)} <span style="font-size:.75rem;font-weight:500">(${fmtPct(pct)})</span></div>
+        </div>
+      </div>
+      <div style="margin-top:1rem;display:flex;flex-direction:column;gap:.5rem">
+        ${found.map(r => {
+          const rPos = r.benefLatente >= 0;
+          return `<div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;padding:.5rem 0;border-bottom:1px solid var(--border)">
+            <span style="font-weight:500">${r.pos.ticker}</span>
+            <span class="mono money" style="color:${rPos?'var(--green)':'var(--red)'};font-weight:600">${rPos?'+':''}${fmtEurRaw(r.benefLatente)}</span>
+          </div>`;
+        }).join('')}
+      </div>
+      ${failed.length ? `<div style="font-size:.7rem;color:var(--text3);margin-top:.75rem">Sin datos: ${failed.map(r => r.pos.ticker).join(', ')}</div>` : ''}
+      <div style="font-size:.6rem;color:var(--text3);margin-top:.5rem">Vía Finnhub · puede no reflejar el mercado exacto</div>
+    `;
+  }
+
+  if (btn) { btn.disabled = false; btn.textContent = '↻ Ver precios en bolsa'; }
+}
+
+// ── Alertas de niveles: comprueba precios contra niveles definidos en Activos ──
+async function checkLevelAlerts() {
+  const banner = document.getElementById('level-alerts-banner');
+  const { open } = calcFIFO();
+
+  // Solo empresas con ticker bursátil y al menos un nivel de compra definido (Nivel 1-4/Extra)
+  const targets = open
+    .map(o => ({ pos: o, emp: empresas.find(e => e.nombre === o.ticker) }))
+    .filter(({ emp }) => {
+      if (!emp?.ticker || (emp.tipo && emp.tipo !== 'Empresa')) return false;
+      return [emp.nivel1, emp.nivel2, emp.nivel3, emp.nivel4, emp.nivel_extra].some(v => v != null && v !== '');
+    });
+
+  if (!targets.length) {
+    banner.style.display = '';
+    banner.innerHTML = `<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1.25rem;font-size:.8rem;color:var(--text3)">
+      No hay empresas con niveles de compra definidos entre tus posiciones abiertas.
+    </div>`;
+    return;
+  }
+
+  banner.style.display = '';
+  banner.innerHTML = `<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1.25rem;font-size:.8rem;color:var(--text3)">
+    Comprobando ${targets.length} empresa${targets.length !== 1 ? 's' : ''}…
+  </div>`;
+
+  const results = await Promise.all(targets.map(async ({ pos, emp }) => {
+    try {
+      const res = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(emp.ticker)}&token=${FINNHUB_KEY}`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      if (!data || data.c === 0 || data.c == null) return null;
+      const priceEur = data.c * (usdEurRate || 0.92);
+
+      // Niveles de compra definidos, ordenados de mayor a menor precio
+      // (Nivel 1 = primer soporte/más alto, Nivel 4/Extra = más profundo)
+      const nivelesCompra = [
+        { label: 'Nivel 1', val: emp.nivel1 }, { label: 'Nivel 2', val: emp.nivel2 },
+        { label: 'Nivel 3', val: emp.nivel3 }, { label: 'Nivel 4', val: emp.nivel4 },
+        { label: 'Nivel Extra', val: emp.nivel_extra }
+      ].filter(n => n.val != null && n.val !== '').sort((a, b) => b.val - a.val);
+
+      // Nivel de inversión actual: cuántas "capas" de NIVEL_THRESHOLD_EUR ya tienes invertidas
+      const investedLevel = Math.max(1, Math.ceil(pos.total / NIVEL_THRESHOLD_EUR));
+
+      // Nivel de precio actual: cuántos niveles de compra ha tocado/cruzado el precio de mercado
+      // (cuenta cuántos niveles están a precio >= precio actual, es decir, ya alcanzados al bajar)
+      const priceLevelIndex = nivelesCompra.filter(n => priceEur <= n.val).length || 0;
+      const priceLevelReached = Math.max(1, priceLevelIndex || 1);
+
+      let levelStatus = null;
+      if (nivelesCompra.length) {
+        if (investedLevel < priceLevelReached) {
+          levelStatus = { type: 'behind', diff: priceLevelReached - investedLevel, current: investedLevel, target: priceLevelReached };
+        } else if (investedLevel === priceLevelReached) {
+          levelStatus = { type: 'ok', current: investedLevel };
+        } else {
+          levelStatus = { type: 'ahead', current: investedLevel, target: priceLevelReached };
+        }
+      }
+
+      // Cercanía a la venta deseada (si está definida)
+      let saleAlert = null;
+      if (emp.venta_deseada) {
+        const distPct = ((priceEur - emp.venta_deseada) / emp.venta_deseada) * 100;
+        if (Math.abs(distPct) < 5 || distPct >= 0) {
+          saleAlert = { distPct, distAbs: Math.abs(distPct) };
+        }
+      }
+
+      return { ticker: pos.ticker, empTicker: emp.ticker, priceEur, invested: pos.total, levelStatus, saleAlert };
+    } catch {
+      return null;
+    }
+  }));
+
+  const valid = results.filter(Boolean);
+
+  if (!valid.length) {
+    banner.innerHTML = `<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1.25rem;font-size:.8rem;color:var(--text3)">
+      No se pudieron consultar precios para comprobar niveles.
+    </div>`;
+    return;
+  }
+
+  // Relevantes: cualquiera con un desajuste de nivel, o cerca/por encima de la venta deseada
+  const relevant = valid.filter(r => (r.levelStatus && r.levelStatus.type !== 'ok') || r.saleAlert);
+  const okOnes = valid.filter(r => r.levelStatus && r.levelStatus.type === 'ok' && !r.saleAlert);
+
+  if (!relevant.length) {
+    banner.innerHTML = `<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1.25rem;font-size:.8rem;color:var(--text3)">
+      ✓ Todo en orden: el nivel de inversión coincide con el nivel de precio en todas tus empresas.
+    </div>`;
+    return;
+  }
+
+  const rowHtml = r => {
+    const parts = [];
+    if (r.levelStatus && r.levelStatus.type === 'behind') {
+      parts.push(`<div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;cursor:pointer" onclick="openCompanyDetail('${r.ticker.replace(/'/g,"\\'")}')">
+        <span><span style="color:#facc15">▼</span> <strong>${r.ticker}</strong> — te falta aplicar ${r.levelStatus.diff} nivel${r.levelStatus.diff > 1 ? 'es' : ''}</span>
+        <span class="mono" style="color:#facc15">N${r.levelStatus.current} → N${r.levelStatus.target}</span>
+      </div>`);
+    } else if (r.levelStatus && r.levelStatus.type === 'ahead') {
+      parts.push(`<div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;cursor:pointer" onclick="openCompanyDetail('${r.ticker.replace(/'/g,"\\'")}')">
+        <span><span style="color:var(--text3)">●</span> <strong>${r.ticker}</strong> — invertido por delante del precio</span>
+        <span class="mono" style="color:var(--text3)">N${r.levelStatus.current} (precio en N${r.levelStatus.target})</span>
+      </div>`);
+    }
+    if (r.saleAlert) {
+      const above = r.saleAlert.distPct >= 0;
+      const veryClose = r.saleAlert.distAbs < 2;
+      const color = veryClose ? 'var(--accent)' : (above ? 'var(--green)' : '#facc15');
+      const icon = veryClose ? '●' : (above ? '▲' : '▼');
+      parts.push(`<div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;cursor:pointer" onclick="openCompanyDetail('${r.ticker.replace(/'/g,"\\'")}')">
+        <span><span style="color:${color}">${icon}</span> <strong>${r.ticker}</strong> cerca de Venta deseada</span>
+        <span class="mono" style="color:${color}">${above?'+':''}${r.saleAlert.distPct.toFixed(1)}%</span>
+      </div>`);
+    }
+    return parts.join('');
+  };
+
+  banner.innerHTML = `<div style="background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.3);border-radius:10px;overflow:hidden">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:.875rem 1.25rem;cursor:pointer" onclick="toggleLevelAlerts()">
+      <div style="font-size:.8rem;font-weight:700;color:var(--text)">⚡ Alertas de nivel</div>
+      <span id="level-alerts-chevron" style="font-size:.7rem;color:var(--text3)">▲ Ocultar</span>
+    </div>
+    <div id="level-alerts-body" style="padding:0 1.25rem 1rem">
+      <div style="display:flex;flex-direction:column;gap:.5rem">
+        ${relevant.map(rowHtml).join('')}
+      </div>
+      ${okOnes.length ? `<div style="font-size:.7rem;color:var(--text3);margin-top:.75rem">✓ Correctas: ${okOnes.map(r=>r.ticker).join(', ')}</div>` : ''}
+      <div style="font-size:.65rem;color:var(--text3);margin-top:.875rem;padding-top:.75rem;border-top:1px solid rgba(250,204,21,.2)">⚠ Precios vía Finnhub — pueden no reflejar el mercado en tiempo real exacto. Solo disponible para acciones de EEUU en el plan gratuito.</div>
+    </div>
+  </div>`;
+}
+
+function toggleLevelAlerts() {
+  const body = document.getElementById('level-alerts-body');
+  const chevron = document.getElementById('level-alerts-chevron');
+  if (!body || !chevron) return;
+  const hidden = body.style.display === 'none';
+  body.style.display = hidden ? '' : 'none';
+  chevron.textContent = hidden ? '▲ Ocultar' : '▼ Mostrar';
+}
+
+function closeCompanyDetail() {
+  document.getElementById('company-modal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function openCompanyDetail(nombre) {
+  const { closed, open } = calcFIFO();
+  const closedOps = closed.filter(c => c.ticker === nombre);
+  const openPos = open.find(o => o.ticker === nombre);
+  const emp = empresas.find(e => e.nombre === nombre);
+
+  const rawProfit = closedOps.reduce((s, c) => s + c.profit, 0);
+  const commission = closedOps.length ? (closedOps[0].tickerTotalCommission || 0) : 0;
+  const realizedProfit = rawProfit - commission;
+  const closedInvested = closedOps.reduce((s,c)=>s+c.buyPrice*c.qty,0);
+  const totalInvested = closedInvested + (openPos?.total || 0);
+  const roiClosed = closedInvested > 0 ? (realizedProfit / closedInvested) * 100 : 0;
+
+  const isPos = realizedProfit >= 0;
+  const accentColor = isPos ? 'var(--green)' : 'var(--red)';
+  const accentBg = isPos ? 'rgba(74,222,128,.1)' : 'rgba(248,113,113,.1)';
+  const accentBorder = isPos ? 'rgba(74,222,128,.3)' : 'rgba(248,113,113,.3)';
+
+  // Sección: resumen de beneficio realizado (o estado "sin venta" si nunca se ha vendido)
+  const profitSection = closedOps.length ? `
+    <div style="background:${accentBg};border:1px solid ${accentBorder};border-radius:12px;padding:1.25rem;margin-bottom:1.25rem;text-align:center">
+      <div style="font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.5rem">Beneficio realizado</div>
+      <div class="money" style="font-size:1.75rem;font-weight:700;color:${accentColor};font-family:var(--mono)">${isPos ? '+' : ''}${fmtEurRaw(realizedProfit)}</div>
+      <div style="font-size:.8rem;color:${accentColor};margin-top:.25rem">${fmtPct(roiClosed)}</div>
+      <div style="font-size:.7rem;color:var(--text3);margin-top:.5rem">${closedOps.length} operación${closedOps.length !== 1 ? 'es' : ''} cerrada${closedOps.length !== 1 ? 's' : ''} · -${fmtEurRaw(commission)} en comisiones</div>
+      <div class="mob-op-row" style="margin-top:.85rem;padding-top:.75rem;border-top:1px solid ${accentBorder};text-align:left">
+        <span class="mob-op-label">Total invertido</span><span class="mono money">${fmtEurRaw(totalInvested)}</span>
+      </div>
+    </div>` : `
+    <div style="background:var(--surface2);border:1px solid var(--border2);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem;text-align:center">
+      <div style="font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.5rem">Beneficio realizado</div>
+      <div style="font-size:1.1rem;font-weight:600;color:var(--text3)">Sin venta todavía</div>
+      <div style="font-size:.7rem;color:var(--text3);margin-top:.4rem">Esta empresa solo tiene posición abierta</div>
+      <div class="mob-op-row" style="margin-top:.85rem;padding-top:.75rem;border-top:1px solid var(--border);text-align:left">
+        <span class="mob-op-label">Total invertido</span><span class="mono money">${fmtEurRaw(totalInvested)}</span>
+      </div>
+    </div>`;
+
+  // Sección: posición abierta actual (si existe)
+  const openSection = openPos ? `
+    <div style="background:var(--surface2);border:1px solid var(--border2);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem">
+        <div style="font-size:.85rem;font-weight:700;color:var(--text)">Posición abierta</div>
+        <button id="live-price-btn" onclick="fetchLivePrice('${nombre.replace(/'/g, "\\'")}')" class="btn btn-sm" style="font-size:.7rem;padding:.25rem .6rem">↻ Ver precio actual</button>
+      </div>
+      <div class="mob-op-row"><span class="mob-op-label">Acciones</span><span class="mono">${fmtNum(openPos.qty)}</span></div>
+      <div class="mob-op-row"><span class="mob-op-label">Precio medio</span><span class="money mono">${fmtEurRaw(openPos.avgPrice)}</span></div>
+      <div class="mob-op-row"><span class="mob-op-label">Invertido</span><span class="money mono">${fmtEurRaw(openPos.total)}</span></div>
+      <div id="live-price-result" style="margin-top:.6rem"></div>
+    </div>` : (emp?.ticker ? `
+    <div style="background:var(--surface2);border:1px solid var(--border2);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:.85rem;font-weight:700;color:var(--text)">Precio en bolsa</div>
+        <button id="live-price-btn" onclick="fetchLivePrice('${nombre.replace(/'/g, "\\'")}')" class="btn btn-sm" style="font-size:.7rem;padding:.25rem .6rem">↻ Ver precio actual</button>
+      </div>
+      <div id="live-price-result" style="margin-top:.6rem"></div>
+    </div>` : '');
+
+  // Sección: historial de compras y ventas en orden cronológico
+  const history = moves
+    .filter(m => m.ticker === nombre)
+    .slice()
+    .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+
+  // Beneficio neto por fecha de venta (agrupando los pares FIFO que correspondan a esa venta)
+  const profitBySellDate = {};
+  closedOps.forEach(c => {
+    profitBySellDate[c.sellDate] = (profitBySellDate[c.sellDate] || 0) + c.profit;
+  });
+
+  const historySection = history.length ? `
+    <div style="background:var(--surface2);border:1px solid var(--border2);border-radius:12px;padding:1rem 1.25rem">
+      <div style="font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.6rem">Historial de movimientos</div>
+      <div class="company-history-list">
+        ${history.map(m => {
+          const isCompra = m.tipo === 'compra';
+          const dotColor = isCompra ? 'var(--blue)' : 'var(--red)';
+          const label = isCompra ? 'Compra' : 'Venta';
+          const saleProfit = !isCompra ? profitBySellDate[m.fecha] : null;
+          const saleProfitHtml = saleProfit != null
+            ? `<div class="mono money" style="font-size:.7rem;font-weight:600;color:${saleProfit >= 0 ? 'var(--green)' : 'var(--red)'}">${saleProfit >= 0 ? '+' : ''}${fmtEurRaw(saleProfit)}</div>`
+            : `<div class="mono money" style="font-size:.7rem;color:var(--text3)">${fmtEurRaw(m.importe)}</div>`;
+          return `<div class="company-history-row" style="display:flex;align-items:center;gap:.6rem;padding:.45rem 0">
+            <span style="width:7px;height:7px;border-radius:50%;background:${dotColor};flex-shrink:0"></span>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:.78rem;font-weight:600;color:${isCompra ? 'var(--blue)' : 'var(--red)'}">${label}</div>
+              <div style="font-size:.7rem;color:var(--text3);font-family:var(--mono)">${fmtDate(m.fecha)}</div>
+            </div>
+            <div style="text-align:right">
+              <div class="mono money" style="font-size:.8rem">${fmtNum(m.cantidad)} × ${fmtEurRaw(m.precio)}</div>
+              ${saleProfitHtml}
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>` : '';
+
+  // Sección: info de empresa / niveles (si existe en Activos)
+  let infoSection = '';
+  if (emp) {
+    const tipoColors = { 'Empresa': '#60a5fa', 'ETF': '#34d399', 'Criptomoneda': '#f59e0b', 'Índice': '#a78bfa' };
+    const tipoColor = tipoColors[emp.tipo] || 'var(--text3)';
+    const niveles = [
+      ['Venta deseada', emp.venta_deseada], ['Nivel 1', emp.nivel1], ['Nivel 2', emp.nivel2],
+      ['Nivel 3', emp.nivel3], ['Nivel 4', emp.nivel4], ['Nivel Extra', emp.nivel_extra]
+    ].filter(([, v]) => v != null && v !== '');
+
+    infoSection = `
+      <div style="background:var(--surface2);border:1px solid var(--border2);border-radius:12px;padding:1rem 1.25rem">
+        <div style="font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:.6rem">Información</div>
+        ${emp.ticker ? `<div class="mob-op-row"><span class="mob-op-label">Ticker</span><span class="mono">${emp.ticker}</span></div>` : ''}
+        ${emp.tipo ? `<div class="mob-op-row"><span class="mob-op-label">Tipo</span><span style="font-size:.7rem;padding:.15rem .5rem;border-radius:4px;background:${tipoColor}22;color:${tipoColor};font-family:var(--mono)">${emp.tipo}</span></div>` : ''}
+        ${emp.sector ? `<div class="mob-op-row"><span class="mob-op-label">Sector</span><span class="mob-op-val">${emp.sector}</span></div>` : ''}
+        ${niveles.length ? `<div style="margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border)">
+          ${niveles.map(([label, val], i) => `<div class="mob-op-row"><span class="mob-op-label">${label}</span><span class="mono" style="${i===0?'color:var(--accent);font-weight:600':''}">${displayNivel(val)}</span></div>`).join('')}
+        </div>` : ''}
+      </div>`;
+  }
+
+  // Desktop layout: horizontal grid. Mobile: stacked.
+  const isDesktop = window.innerWidth > 768;
+  let bodyContent;
+  if (isDesktop) {
+    // Left column: profit + open position + info; Right column: history
+    const leftCol = `<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1rem">${profitSection}${openSection}${infoSection}</div>`;
+    const rightCol = historySection ? `<div style="flex:1;min-width:0">${historySection}</div>` : '';
+    bodyContent = `<div style="display:flex;gap:1rem;align-items:flex-start">${leftCol}${rightCol}</div>`;
+  } else {
+    bodyContent = `<div style="display:flex;flex-direction:column;gap:1rem">${profitSection}${openSection}${historySection}${infoSection}</div>`;
+  }
+
+  document.getElementById('company-modal-body').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem">
+      <div>
+        <div style="font-size:1.15rem;font-weight:700">${nombre}</div>
+        ${emp?.ticker ? `<div class="mono" style="font-size:.8rem;color:var(--text3);margin-top:.1rem">${emp.ticker}</div>` : ''}
+      </div>
+      <button onclick="closeCompanyDetail()" style="background:none;border:none;color:var(--text3);font-size:1.2rem;cursor:pointer;padding:0">✕</button>
+    </div>
+    ${bodyContent}
+  `;
+
+  document.getElementById('company-modal-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProfitHistory() {
+  document.getElementById('profit-history-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function openProfitHistory() {
+  const { closed } = calcFIFO();
+
+  // Group FIFO pairs by sellDate, summing rawProfit; subtract commission once per ticker
+  const byDate = {};
+  const commissionByTicker = {};
+  closed.forEach(c => {
+    if (!byDate[c.sellDate]) byDate[c.sellDate] = { date: c.sellDate, rawProfit: 0, tickers: new Set() };
+    byDate[c.sellDate].rawProfit += c.profit;
+    byDate[c.sellDate].tickers.add(c.ticker);
+    commissionByTicker[c.ticker] = c.tickerTotalCommission || 0;
+  });
+
+  // Subtract each ticker's commission on the date of its last sell
+  const lastSellByTicker = {};
+  Object.values(byDate).forEach(d => d.tickers.forEach(t => { lastSellByTicker[t] = d.date; }));
+  Object.entries(lastSellByTicker).forEach(([ticker, date]) => {
+    if (byDate[date]) byDate[date].rawProfit -= (commissionByTicker[ticker] || 0);
+  });
+
+  // Calc cumulative chronologically, then reverse for display (most recent first)
+  const rowsChron = Object.values(byDate).sort((a, b) => new Date(a.date) - new Date(b.date));
+  let running = 0;
+  rowsChron.forEach(r => { running += r.rawProfit; r.cumulative = running; });
+  const rows = rowsChron.slice().reverse();
+
+  const listEl = document.getElementById('profit-history-list');
+
+  if (!rows.length) {
+    listEl.innerHTML = '<div class="empty"><div class="empty-icon">○</div>Sin operaciones cerradas todavía</div>';
+  } else {
+    // Summary bar at top
+    const totalProfit = rows.reduce((s, r) => s + r.rawProfit, 0);
+    const wins = rows.filter(r => r.rawProfit > 0).length;
+    const losses = rows.filter(r => r.rawProfit < 0).length;
+    const isPos = totalProfit >= 0;
+
+    listEl.innerHTML = `
+      <div style="background:${isPos?'rgba(74,222,128,.1)':'rgba(248,113,113,.1)'};border:1px solid ${isPos?'rgba(74,222,128,.3)':'rgba(248,113,113,.3)'};border-radius:10px;padding:1rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-size:.7rem;color:var(--text3)">Total acumulado</div>
+          <div class="money" style="font-size:1.4rem;font-weight:700;color:${isPos?'var(--green)':'var(--red)'};font-family:var(--mono)">${isPos?'+':''}${fmtEurRaw(totalProfit)}</div>
+        </div>
+        <div style="text-align:right;font-size:.75rem;color:var(--text3)">
+          <div><span style="color:var(--green)">▲ ${wins}</span> operaciones ganadoras</div>
+          <div><span style="color:var(--red)">▼ ${losses}</span> operaciones perdedoras</div>
+        </div>
+      </div>
+      ${rows.map(r => {
+        const isRowPos = r.rawProfit >= 0;
+        const isCumPos = r.cumulative >= 0;
+        const tickerList = [...r.tickers].join(', ');
+        return `<div style="display:flex;align-items:center;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--border)">
+          <div style="width:3px;height:36px;border-radius:2px;flex-shrink:0;background:${isRowPos?'var(--green)':'var(--red)'}"></div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:.82rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${tickerList}</div>
+            <div style="font-size:.7rem;color:var(--text3);font-family:var(--mono)">${fmtDate(r.date)}</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0">
+            <div class="money" style="font-size:.85rem;font-weight:600;color:${isRowPos?'var(--green)':'var(--red)'}">${isRowPos?'+':''}${fmtEurRaw(r.rawProfit)}</div>
+            <div class="money" style="font-size:.7rem;color:${isCumPos?'var(--text3)':'var(--red)'}">acum. ${isCumPos?'+':''}${fmtEurRaw(r.cumulative)}</div>
+          </div>
+        </div>`;
+      }).join('')}
+    `;
+  }
+
+  document.getElementById('profit-history-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+let investedBreakdownDir = 'asc';
+function openInvestedBreakdown() {
+  renderInvestedBreakdown();
+  document.getElementById('invested-modal-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function toggleInvestedBreakdownDir() {
+  investedBreakdownDir = investedBreakdownDir === 'asc' ? 'desc' : 'asc';
+  renderInvestedBreakdown();
+}
+
+function renderInvestedBreakdown() {
+  const byCompany = {};
+  moves.filter(m => m.tipo === 'compra').forEach(m => {
+    byCompany[m.ticker] = (byCompany[m.ticker] || 0) + (m.importe || 0);
+  });
+  let rows = Object.entries(byCompany).sort((a, b) => a[1] - b[1]);
+  if (investedBreakdownDir === 'desc') rows.reverse();
+  const total = rows.reduce((s, [, v]) => s + v, 0);
+
+  const dirBtn = document.getElementById('invested-dir-btn');
+  if (dirBtn) dirBtn.textContent = investedBreakdownDir === 'asc' ? '↑ Ascendente' : '↓ Descendente';
+
+  const listEl = document.getElementById('invested-breakdown-list');
+  if (!rows.length) {
+    listEl.innerHTML = '<div class="empty"><div class="empty-icon">○</div>Sin compras registradas</div>';
+  } else {
+    listEl.innerHTML = rows.map(([nombre, val]) => {
+      const pct = total > 0 ? (val / total * 100) : 0;
+      return `<div style="display:flex;align-items:center;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--border)">
+        <div style="flex:1;min-width:0">
+          <div style="font-size:.875rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${nombre}</div>
+          <div style="height:4px;background:var(--surface2);border-radius:2px;margin-top:.35rem;overflow:hidden">
+            <div style="height:100%;width:${pct}%;background:var(--accent)"></div>
+          </div>
+        </div>
+        <div style="font-size:.85rem;white-space:nowrap;text-align:right">${fmtEur(val)}</div>
+      </div>`;
+    }).join('');
+  }
+}
+
+function closeInvestedBreakdown() {
+  document.getElementById('invested-modal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function setFilterSearch(val) {
+  const q = val.trim();
+  activeFilter = q || 'todos';
+  renderClosed();
+  renderOpen();
+}
+
+function setFilter(t) {
+  activeFilter = t;
+  const searchEl = document.getElementById('ticker-search');
+  if (searchEl) searchEl.value = t === 'todos' ? '' : t;
+  renderClosed();
+  renderOpen();
+}
+
+function datesOverlap(ops) {
+  // Returns true if all ops in a group have at least partial time overlap (same ticker, held concurrently)
+  // We consider a group as "concurrent" if the buy date of the later op is before the sell date of the earlier op
+  if (ops.length < 2) return false;
+  const sorted = ops.slice().sort((a,b) => new Date(a.buyDate)-new Date(b.buyDate));
+  for (let i=1;i<sorted.length;i++) {
+    if (new Date(sorted[i].buyDate) < new Date(sorted[i-1].sellDate)) return true;
+  }
+  return false;
+}
+
+let closedGroupOpen = {};
+
+function setClosedSort(col){ if(closedSortCol===col) closedSortDir=closedSortDir==='asc'?'desc':'asc'; else {closedSortCol=col;closedSortDir='asc';} renderClosed(); }
+function setOpenSort(col){ if(openSortCol===col) openSortDir=openSortDir==='asc'?'desc':'asc'; else {openSortCol=col;openSortDir='asc';} renderOpen(); }
+
+
+function renderClosed() {
+  const { closed } = calcFIFO();
+  let data = activeFilter === 'todos' ? closed : closed.filter(c => c.ticker.toLowerCase().includes(activeFilter.toLowerCase()));
+  data=data.slice().sort((a,b)=>{let va=a[closedSortCol],vb=b[closedSortCol]; if(typeof va==='string') return closedSortDir==='asc'?String(va).localeCompare(String(vb)):String(vb).localeCompare(String(va)); return closedSortDir==='asc'?va-vb:vb-va;});
+  document.getElementById('closed-count').textContent = data.length + ' operaciones';
+['ticker','qty','profit','pct'].forEach(col=>{const el=document.querySelector('[data-csort="'+col+'"]');const ic=document.getElementById('csi-'+col);if(el&&ic){el.classList.toggle('sort-active',col===closedSortCol);ic.textContent=col===closedSortCol?(closedSortDir==='asc'?'↑':'↓'):'↕';}});
+
+  const tb = document.getElementById('closed-body');
+  if (!data.length) { tb.innerHTML = '<tr><td colspan="10" class="empty"><div class="empty-icon">○</div>Sin operaciones cerradas aún</td></tr>'; return; }
+
+  // Group by ticker, then sub-group ops by sellDate to merge same-sell trades
+  const byTicker = {};
+  data.forEach(c => { if (!byTicker[c.ticker]) byTicker[c.ticker] = []; byTicker[c.ticker].push(c); });
+
+  // Build group summaries for sorting
+  const groups = Object.keys(byTicker).map(ticker => {
+    const allOps = byTicker[ticker];
+    // Sub-group by sellDate: ops with same sellDate are merged into one "trade"
+    const tradeMap = {};
+    allOps.forEach(c => {
+      const key = c.sellDate;
+      if (!tradeMap[key]) tradeMap[key] = [];
+      tradeMap[key].push(c);
+    });
+    const trades = Object.values(tradeMap).sort((a,b) => new Date(a[0].sellDate) - new Date(b[0].sellDate));
+
+    const gQty = allOps.reduce((s,c)=>s+c.qty, 0);
+    const gRawProfit = allOps.reduce((s,c)=>s+c.profit, 0);
+    const gRealCommission = allOps.length > 0 ? (allOps[0].tickerTotalCommission || 0) : 0;
+    const gProfit = gRawProfit - gRealCommission;
+    const gInvested = allOps.reduce((s,c)=>s+c.buyPrice*c.qty, 0);
+    const gPct = gInvested > 0 ? (gProfit / gInvested) * 100 : 0;
+    const gAvgBuy = gQty > 0 ? gInvested/gQty : 0;
+    const minBuy = allOps.reduce((d,c)=>(!d||c.buyDate<d)?c.buyDate:d,'');
+    const maxSell = allOps.reduce((d,c)=>(!d||c.sellDate>d)?c.sellDate:d,'');
+    const gDays = daysBetween(minBuy, maxSell);
+    return { ticker, allOps, trades, gQty, gProfit, gRawProfit, gRealCommission, gInvested, gPct, gAvgBuy, minBuy, maxSell, gDays };
+  });
+
+  // Sort groups by selected column
+  groups.sort((a, b) => {
+    let va, vb;
+    if (closedSortCol === 'ticker') { va = a.ticker; vb = b.ticker; return closedSortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va); }
+    if (closedSortCol === 'qty') { va = a.gQty; vb = b.gQty; }
+    else if (closedSortCol === 'profit') { va = a.gProfit; vb = b.gProfit; }
+    else if (closedSortCol === 'pct') { va = a.gPct; vb = b.gPct; }
+    else { va = a.ticker; vb = b.ticker; return closedSortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va); }
+    return closedSortDir === 'asc' ? va - vb : vb - va;
+  });
+
+  let html = '';
+
+  const isMobile = window.innerWidth <= 768;
+  const bandColors = [
+    'rgba(96,165,250,.08)', 'rgba(200,240,96,.08)', 'rgba(248,113,113,.08)',
+    'rgba(167,139,250,.08)', 'rgba(251,191,36,.08)'
+  ];
+
+  groups.forEach(({ ticker, allOps, trades, gQty, gProfit, gRealCommission, gInvested, gPct, gAvgBuy, minBuy, maxSell, gDays }) => {
+    // Safe ID: strip non-alphanumeric chars
+    const gId = 'grp-' + ticker.replace(/[^a-zA-Z0-9]/g, '_');
+    const isOpen = closedGroupOpen[gId] || false;
+    const hasMultiple = trades.length > 1;
+    const overlapping = hasMultiple && datesOverlap(allOps);
+    const useColors = hasMultiple && !overlapping;
+
+    if (isMobile) {
+      const e = empresas.find(x => x.nombre === ticker);
+      const tickerSub = e?.ticker ? `<span style="font-size:.65rem;color:var(--text3);display:block;font-family:var(--mono);margin-top:1px">${e.ticker}</span>` : '';
+      html += `<tr class="closed-row-mobile" onclick="openMobDetail('${ticker.replace(/'/g,"\\'")}')">
+        <td class="ticker-cell" style="font-weight:${hasMultiple?'700':'400'}">
+          ${ticker}${tickerSub}
+          ${hasMultiple ? `<span style="font-size:.65rem;color:var(--text3);margin-left:4px">(${trades.length})</span>` : ''}
+        </td>
+        <td class="mono" style="text-align:left;vertical-align:middle">
+          <span class="${gProfit >= 0 ? 'pos' : 'neg'}" style="font-weight:600">${gProfit >= 0 ? '+' : ''}${fmtEur(gProfit)}</span>
+          <span style="font-size:.7rem;display:block;font-weight:400" class="${gPct >= 0 ? 'pos' : 'neg'}">${fmtPct(gPct)}</span>
+        </td>
+      </tr>`;
+    } else if (!hasMultiple) {
+      // Single trade: flat row, no collapsible
+      const c = trades[0][0];
+      const tQty = trades[0].reduce((s,x)=>s+x.qty,0);
+      const tProfit = trades[0].reduce((s,x)=>s+x.profit,0) - gRealCommission;
+      const tInvested = trades[0].reduce((s,x)=>s+x.buyPrice*x.qty,0);
+      const tPct = tInvested > 0 ? (tProfit/tInvested)*100 : 0;
+      const tAvgBuy = tQty > 0 ? tInvested/tQty : 0;
+      const eC = empresas.find(x => x.nombre === ticker);
+      const tickerSubC = eC?.ticker ? `<span style="font-size:.65rem;color:var(--text3);display:block;font-family:var(--mono);margin-top:1px">${eC.ticker}</span>` : '';
+      html += `<tr>
+        <td class="ticker-cell">${ticker}${tickerSubC}</td>
+        <td class="mono col-desktop">${fmtNum(tQty)}</td>
+        <td class="mono col-desktop">${fmtEur(tAvgBuy)}</td>
+        <td class="muted col-desktop">${fmtDate(c.buyDate)}</td>
+        <td class="mono col-desktop">${fmtEur(c.sellPrice)}</td>
+        <td class="muted col-desktop">${fmtDate(c.sellDate)}</td>
+        <td class="mono ${tProfit >= 0 ? 'pos' : 'neg'}" style="font-weight:600">
+          ${tProfit >= 0 ? '+' : ''}${fmtEur(tProfit)}
+          <span style="font-size:.65rem;color:var(--text3);font-weight:400;display:block;line-height:1.4">-${fmtEurRaw(gRealCommission)} com.</span>
+        </td>
+        <td class="mono col-desktop ${tPct >= 0 ? 'pos' : 'neg'}">${fmtPct(tPct)}</td>
+        <td class="muted col-desktop">${formatDuration(c.days)}</td>
+      </tr>`;
+    } else {
+      // Multiple trades: collapsible group
+      const eM = empresas.find(x => x.nombre === ticker);
+      const tickerSubM = eM?.ticker ? `<span style="font-size:.65rem;color:var(--text3);font-weight:400;font-family:var(--mono);display:block;margin-top:1px">${eM.ticker}</span>` : '';
+      html += `<tr style="cursor:pointer;background:rgba(200,240,96,.025)" onclick="toggleClosedGroup('${gId}')">
+        <td class="ticker-cell" style="font-weight:700">
+          <span style="display:inline-flex;align-items:center;gap:6px">
+            <span style="font-size:.65rem;color:var(--text3);transition:transform .2s;display:inline-block;transform:rotate(${isOpen?'90':'0'}deg)" id="${gId}-arrow">▶</span>
+            ${ticker}
+            <span style="font-size:.65rem;color:var(--text3);font-weight:400">(${trades.length})</span>
+          </span>
+          ${tickerSubM}
+        </td>
+        <td class="mono col-desktop" style="font-weight:600">${fmtNum(gQty)}</td>
+        <td class="mono col-desktop">${fmtEur(gAvgBuy)}</td>
+        <td class="muted col-desktop">${fmtDate(minBuy)}</td>
+        <td class="mono col-desktop">—</td>
+        <td class="muted col-desktop">${fmtDate(maxSell)}</td>
+        <td class="mono ${gProfit >= 0 ? 'pos' : 'neg'}" style="font-weight:700">
+          ${gProfit >= 0 ? '+' : ''}${fmtEur(gProfit)}
+          <span style="font-size:.65rem;color:var(--text3);font-weight:400;display:block;line-height:1.4">-${fmtEurRaw(gRealCommission)} com.</span>
+        </td>
+        <td class="mono col-desktop ${gPct >= 0 ? 'pos' : 'neg'}">${fmtPct(gPct)}</td>
+        <td class="muted col-desktop">${formatDuration(gDays)}</td>
+      </tr>`;
+
+      trades.forEach((tradeOps, idx) => {
+        const band = useColors ? `background:${bandColors[idx % bandColors.length]}` : 'background:rgba(255,255,255,.012)';
+        const isMerged = tradeOps.length > 1;
+        tradeOps.forEach((c, subIdx) => {
+          const cProfit = c.profit;
+          const cInvested = c.buyPrice * c.qty;
+          const cPct = cInvested > 0 ? (cProfit / cInvested) * 100 : 0;
+          html += `<tr class="${gId}-child" style="display:${isOpen?'table-row':'none'};${band}">
+            <td class="muted" style="padding-left:2rem;font-size:.75rem">
+              ${isMerged && subIdx === 0 ? `<span style="font-size:.6rem;color:var(--text3);display:block;margin-bottom:2px">Venta ${idx+1} (${tradeOps.length} lotes)</span>` : ''}
+              ${isMerged ? `<span style="padding-left:.75rem">↳</span> ` : `${idx+1}.`} ${ticker}
+            </td>
+            <td class="mono col-desktop" style="font-size:.8rem">${fmtNum(c.qty)}</td>
+            <td class="mono col-desktop" style="font-size:.8rem">${fmtEur(c.buyPrice)}</td>
+            <td class="muted col-desktop" style="font-size:.8rem">${fmtDate(c.buyDate)}</td>
+            <td class="mono col-desktop" style="font-size:.8rem">${fmtEur(c.sellPrice)}</td>
+            <td class="muted col-desktop" style="font-size:.8rem">${fmtDate(c.sellDate)}</td>
+            <td class="mono ${cProfit >= 0 ? 'pos' : 'neg'}" style="font-size:.8rem">${cProfit >= 0 ? '+' : ''}${fmtEur(cProfit)}</td>
+            <td class="mono col-desktop ${cPct >= 0 ? 'pos' : 'neg'}" style="font-size:.8rem">${fmtPct(cPct)}</td>
+            <td class="muted col-desktop" style="font-size:.8rem">${formatDuration(c.days)}</td>
+          </tr>`;
+        });
+      });
+    }
+  });
+
+  tb.innerHTML = html;
+}
+
+function toggleClosedGroup(gId) {
+  closedGroupOpen[gId] = !closedGroupOpen[gId];
+  const isOpen = closedGroupOpen[gId];
+  document.querySelectorAll('.' + gId + '-child').forEach(tr => tr.style.display = isOpen ? 'table-row' : 'none');
+  const arrow = document.getElementById(gId + '-arrow');
+  if (arrow) arrow.style.transform = isOpen ? 'rotate(90deg)' : 'rotate(0deg)';
+}
+
+function updateMovesTickerSelect() {
+  const sel = document.getElementById('mf-ticker');
+  if (!sel) return;
+  const current = sel.value;
+  const tickers = [...new Set(moves.map(m => m.ticker))].sort();
+  sel.innerHTML = '<option value="">Todos</option>' + tickers.map(t => `<option value="${t}" ${t === current ? 'selected' : ''}>${t}</option>`).join('');
+}
+
+function clearMovesFilter() {
+  document.getElementById('mf-ticker').value = '';
+  document.getElementById('mf-tipo').value = '';
+  document.getElementById('mf-desde').value = '';
+  document.getElementById('mf-hasta').value = '';
+  renderMoves();
+}
+
+function setSort(col) {
+  if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+  else { sortCol = col; sortDir = col === 'fecha' ? 'desc' : 'asc'; }
+  renderMoves();
+}
+
+let selectedIdxs = new Set();
+
+function renderMoves() {
+  updateMovesTickerSelect();
+  const fTicker = (document.getElementById('mf-ticker') || {}).value || '';
+  const fTipo = (document.getElementById('mf-tipo') || {}).value || '';
+  const fDesde = (document.getElementById('mf-desde') || {}).value || '';
+  const fHasta = (document.getElementById('mf-hasta') || {}).value || '';
+
+  const withIdx = moves.map((m, i) => ({ ...m, _i: i }));
+  const filtered = withIdx.filter(m => {
+    if (fTicker && m.ticker !== fTicker) return false;
+    if (fTipo && m.tipo !== fTipo) return false;
+    if (fDesde && m.fecha < fDesde) return false;
+    if (fHasta && m.fecha > fHasta) return false;
+    return true;
+  }).sort((a, b) => {
+    let va = a[sortCol], vb = b[sortCol];
+    if (sortCol === 'fecha') { va = new Date(va); vb = new Date(vb); }
+    else if (sortCol === 'ticker') { va = va || ''; vb = vb || ''; return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va); }
+    else { va = parseFloat(va) || 0; vb = parseFloat(vb) || 0; }
+    return sortDir === 'asc' ? va - vb : vb - va;
+  });
+
+  // Update sort icons
+  ['fecha','ticker','cantidad','precio','importe'].forEach(col => {
+    const th = document.querySelector(`.th-sort[data-col="${col}"]`);
+    const si = document.getElementById('si-' + col);
+    if (!th || !si) return;
+    th.classList.toggle('sort-active', col === sortCol);
+    si.textContent = col === sortCol ? (sortDir === 'asc' ? '↑' : '↓') : '↕';
+  });
+
+  const hasFilters = fTicker || fTipo || fDesde || fHasta;
+  document.getElementById('moves-count').textContent = hasFilters
+    ? `${filtered.length} de ${moves.length} registros`
+    : `${moves.length} registros`;
+
+  const tb = document.getElementById('moves-body');
+  if (!moves.length) { tb.innerHTML = '<tr><td colspan="8" class="empty"><div class="empty-icon">○</div>Sin movimientos registrados</td></tr>'; return; }
+  if (!filtered.length) { tb.innerHTML = '<tr><td colspan="8" class="empty"><div class="empty-icon">○</div>Sin resultados para los filtros aplicados</td></tr>'; return; }
+  tb.innerHTML = filtered.map(m => `<tr class="${selectedIdxs.has(m._i) ? 'selected' : ''}">
+    <td style="width:36px"><input type="checkbox" ${selectedIdxs.has(m._i) ? 'checked' : ''} onchange="toggleRow(this, ${m._i})"></td>
+    <td class="muted">${fmtDate(m.fecha)}</td>
+    <td><span class="badge badge-${m.tipo === 'compra' ? 'buy' : 'sell'}">${m.tipo}</span></td>
+    <td class="ticker-cell">${m.ticker}</td>
+    <td class="mono">${fmtNum(m.cantidad)}</td>
+    <td class="mono">${fmtEur(m.precio)}</td>
+    <td class="mono">${fmtEur(m.importe)}</td>
+    <td style="display:flex;gap:2px;align-items:center">
+      <button class="btn-edit" onclick="openEdit(${m._i})" title="Editar">✎</button>
+      <button class="btn-ghost" onclick="deleteMov(${m._i})" title="Eliminar">✕</button>
+    </td>
+  </tr>`).join('');
+
+  const chkAll = document.getElementById('chk-all');
+  if (chkAll) {
+    const allSelected = filtered.length > 0 && filtered.every(m => selectedIdxs.has(m._i));
+    chkAll.checked = allSelected;
+    chkAll.indeterminate = !allSelected && filtered.some(m => selectedIdxs.has(m._i));
+  }
+  updateSelBar();
+}
+
+function toggleRow(chk, idx) {
+  if (chk.checked) selectedIdxs.add(idx);
+  else selectedIdxs.delete(idx);
+  const tr = chk.closest('tr');
+  tr.classList.toggle('selected', chk.checked);
+  const allChks = document.querySelectorAll('#moves-body input[type=checkbox]');
+  const allChecked = [...allChks].every(c => c.checked);
+  const anyChecked = [...allChks].some(c => c.checked);
+  const chkAll = document.getElementById('chk-all');
+  if (chkAll) { chkAll.checked = allChecked; chkAll.indeterminate = !allChecked && anyChecked; }
+  updateSelBar();
+}
+
+function toggleAll(chk) {
+  const allChks = document.querySelectorAll('#moves-body input[type=checkbox]');
+  allChks.forEach(c => {
+    const idx = parseInt(c.getAttribute('onchange').match(/\d+/)[0]);
+    c.checked = chk.checked;
+    c.closest('tr').classList.toggle('selected', chk.checked);
+    if (chk.checked) selectedIdxs.add(idx);
+    else selectedIdxs.delete(idx);
+  });
+  updateSelBar();
+}
+
+function deselectAll() {
+  selectedIdxs.clear();
+  renderMoves();
+}
+
+function updateSelBar() {
+  const bar = document.getElementById('sel-bar');
+  const n = selectedIdxs.size;
+  document.getElementById('sel-count-n').textContent = n;
+  bar.classList.toggle('show', n > 0);
+}
+
+function deleteSelected() {
+  if (!selectedIdxs.size) return;
+  if (!confirm(`¿Eliminar ${selectedIdxs.size} movimiento${selectedIdxs.size > 1 ? 's' : ''}?`)) return;
+  const toDelete = [...selectedIdxs].sort((a, b) => b - a);
+  toDelete.forEach(i => moves.splice(i, 1));
+  selectedIdxs.clear();
+  save(); renderAll();
+  showToast(`${toDelete.length} movimiento${toDelete.length > 1 ? 's eliminados' : ' eliminado'}`, 'success');
+}
+
+// ── Edit modal ────────────────────────────────────────────────────────────────
+let editingIdx = null;
+
+function openEdit(idx) {
+  editingIdx = idx;
+  const m = moves[idx];
+  document.getElementById('edit-tipo').value = m.tipo;
+  document.getElementById('edit-ticker').value = m.ticker;
+  // datetime-local needs YYYY-MM-DDTHH:MM format; old entries may have just YYYY-MM-DD
+  document.getElementById('edit-fecha').value = m.fecha.length === 10 ? m.fecha + 'T00:00' : m.fecha.substring(0,16);
+  document.getElementById('edit-cantidad').value = m.cantidad;
+  document.getElementById('edit-precio').value = m.precio;
+  document.getElementById('edit-retencion').value = m.retencion || 0;
+  document.getElementById('edit-comision').value = m.commission ?? 0;
+  const bruto = m.retencion ? parseFloat((m.importe + m.retencion).toFixed(2)) : m.importe;
+  document.getElementById('edit-importe').value = bruto;
+  document.getElementById('edit-importe-neto').value = m.importe;
+  document.getElementById('edit-modal').classList.add('show');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('edit-modal'))
+    document.getElementById('edit-modal').classList.remove('show');
+}
+
+function syncEditForm(changed) {
+  const q = parseFloat(document.getElementById('edit-cantidad').value) || 0;
+  const p = parseFloat(document.getElementById('edit-precio').value) || 0;
+  const imp = parseFloat(document.getElementById('edit-importe').value) || 0;
+  if (changed === 'precio' && q) document.getElementById('edit-importe').value = (p * q).toFixed(2);
+  else if (changed === 'importe' && q) document.getElementById('edit-precio').value = (imp / q).toFixed(4);
+  else if (changed === 'cantidad') {
+    if (p) document.getElementById('edit-importe').value = (p * q).toFixed(2);
+    else if (imp) document.getElementById('edit-precio').value = (imp / q).toFixed(4);
+  }
+  const bruto = parseFloat(document.getElementById('edit-importe').value) || 0;
+  const ret = parseFloat(document.getElementById('edit-retencion').value) || 0;
+  document.getElementById('edit-importe-neto').value = Math.max(0, bruto - ret).toFixed(2);
+}
+
+function saveEdit() {
+  const tipo = document.getElementById('edit-tipo').value;
+  const ticker = document.getElementById('edit-ticker').value.trim();
+  const fecha = document.getElementById('edit-fecha').value;
+  const cantidad = parseFloat(document.getElementById('edit-cantidad').value);
+  const precio = parseFloat(document.getElementById('edit-precio').value);
+  const importeRaw = parseFloat(document.getElementById('edit-importe').value);
+  const retencion = parseFloat(document.getElementById('edit-retencion').value) || 0;
+  const bruto = isNaN(importeRaw) ? precio * cantidad : importeRaw;
+  const importe = parseFloat(Math.max(0, bruto - retencion).toFixed(2));
+  if (!ticker || !fecha || isNaN(cantidad) || isNaN(precio)) { showToast('Rellena todos los campos', 'error'); return; }
+  const commission=parseFloat(document.getElementById('edit-comision').value) || 0;
+
+  const oldTicker = moves[editingIdx].ticker;
+  const nameChanged = oldTicker !== ticker;
+
+  moves[editingIdx] = { tipo, ticker, fecha, cantidad, precio, importe, retencion, commission };
+
+  if (nameChanged) {
+    const otherCount = moves.filter((m, i) => i !== editingIdx && m.ticker === oldTicker).length;
+    if (otherCount > 0) {
+      const renameAll = confirm(`Has cambiado el nombre de "${oldTicker}" a "${ticker}".\n\nHay ${otherCount} movimiento${otherCount > 1 ? 's' : ''} más con el nombre "${oldTicker}".\n\n¿Quieres cambiar también el nombre en esos movimientos?`);
+      if (renameAll) {
+        moves.forEach((m, i) => { if (i !== editingIdx && m.ticker === oldTicker) m.ticker = ticker; });
+        showToast(`Nombre actualizado en ${otherCount + 1} movimientos`, 'success');
+      } else {
+        showToast('Movimiento actualizado', 'success');
+      }
+    } else {
+      showToast('Movimiento actualizado', 'success');
+    }
+  } else {
+    showToast('Movimiento actualizado', 'success');
+  }
+
+  save(); renderAll();
+  document.getElementById('edit-modal').classList.remove('show');
+}
+
+// ── Form ──────────────────────────────────────────────────────────────────────
+function syncForm(changed) {
+  const q = parseFloat(document.getElementById('new-cantidad').value) || 0;
+  const p = parseFloat(document.getElementById('new-precio').value) || 0;
+  const imp = parseFloat(document.getElementById('new-importe').value) || 0;
+  const ret = parseFloat(document.getElementById('new-retencion').value) ?? 1;
+  if (changed === 'precio' && q) document.getElementById('new-importe').value = (p * q).toFixed(2);
+  else if (changed === 'importe' && q) document.getElementById('new-precio').value = (imp / q).toFixed(4);
+  else if (changed === 'cantidad') {
+    if (p) document.getElementById('new-importe').value = (p * q).toFixed(2);
+    else if (imp) document.getElementById('new-precio').value = (imp / q).toFixed(4);
+  }
+  // Always recalc neto
+  const bruto = parseFloat(document.getElementById('new-importe').value) || 0;
+  const retEur = parseFloat(document.getElementById('new-retencion').value) || 0;
+  document.getElementById('new-importe-neto').value = Math.max(0, bruto - retEur).toFixed(2);
+}
+
+function clearForm() {
+  ['new-ticker', 'new-cantidad', 'new-precio', 'new-importe', 'new-importe-neto'].forEach(id => document.getElementById(id).value = '');
+  const now = new Date();
+  document.getElementById('new-fecha').value = now.toISOString().substring(0,16);
+  document.getElementById('new-retencion').value = '0';
+  document.getElementById('new-comision').value='1';
+}
+
+function addMovimiento() {
+  const tipo = document.getElementById('new-tipo').value;
+  const ticker = document.getElementById('new-ticker').value.trim();
+  const fecha = document.getElementById('new-fecha').value;
+  const cantidad = parseFloat(document.getElementById('new-cantidad').value);
+  const precio = parseFloat(document.getElementById('new-precio').value);
+  const importeRaw = parseFloat(document.getElementById('new-importe').value);
+  const retencion = parseFloat(document.getElementById('new-retencion').value) || 0;
+  const bruto = isNaN(importeRaw) ? precio * cantidad : importeRaw;
+  const importe = parseFloat(Math.max(0, bruto - retencion).toFixed(2));
+  if (!ticker || !fecha || isNaN(cantidad) || isNaN(precio)) { showToast('Rellena todos los campos obligatorios', 'error'); return; }
+  const commission=parseFloat(document.getElementById('new-comision').value) || 0;
+  moves.push({ tipo, ticker, fecha, cantidad, precio, importe, retencion, commission });
+  save(); renderAll();
+  clearForm();
+  closeNuevoModal();
+  showToast(`${tipo === 'compra' ? 'Compra' : 'Venta'} de ${ticker} añadida`, 'success');
+}
+
+function deleteMov(i) {
+  if (!confirm('¿Eliminar este movimiento?')) return;
+  moves.splice(i, 1);
+  selectedIdxs.clear();
+  save(); renderAll();
+  showToast('Movimiento eliminado', 'success');
+}
+
+// ── Export ────────────────────────────────────────────────────────────────────
+function exportBackupJSON() {
+  if (!moves.length && !empresas.length) { showToast('No hay datos para exportar', 'error'); return; }
+  const backup = {
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    moves,
+    empresas
+  };
+  const a = document.createElement('a');
+  a.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(backup, null, 2));
+  const today = new Date().toISOString().split('T')[0];
+  a.download = `portfolio_backup_${today}.json`;
+  a.click();
+  showToast('Copia de seguridad descargada', 'success');
+}
+
+async function restoreBackupJSON(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  event.target.value = ''; // reset para poder volver a elegir el mismo archivo
+
+  try {
+    const text = await file.text();
+    const data = JSON.parse(text);
+    if (!Array.isArray(data.moves) || !Array.isArray(data.empresas)) {
+      showToast('El archivo no tiene el formato esperado', 'error');
+      return;
+    }
+    const confirmMsg = `Esto reemplazará TODOS tus datos actuales con:\n\n${data.moves.length} movimientos\n${data.empresas.length} activos\n\n¿Continuar?`;
+    if (!confirm(confirmMsg)) return;
+
+    moves = data.moves;
+    await save();
+
+    // Reemplaza completamente las empresas: borra las actuales y reinserta desde el backup
+    const existing = await sbFetch('Empresas?select=id');
+    if (existing && existing.length) {
+      await Promise.all(existing.map(e => sbFetch(`Empresas?id=eq.${e.id}`, { method: 'DELETE' })));
+    }
+    empresas = [];
+    for (const e of data.empresas) {
+      const row = {
+        Ticker: e.ticker, Nombre: e.nombre, Tipo: e.tipo, Sector: e.sector,
+        Nivel1: e.nivel1, Nivel2: e.nivel2, Nivel3: e.nivel3, Nivel4: e.nivel4,
+        Nivel_extra: e.nivel_extra, Venta_deseada: e.venta_deseada
+      };
+      const inserted = await sbFetch('Empresas?select=id', {
+        method: 'POST',
+        headers: { ...sbHeaders(), 'Prefer': 'return=representation' },
+        body: JSON.stringify(row)
+      });
+      const newId = inserted && inserted[0] ? inserted[0].id : undefined;
+      empresas.push({ ...e, id: newId });
+    }
+    localStorage.setItem('pf_empresas', JSON.stringify(empresas));
+    renderAll();
+    showToast('Datos restaurados correctamente', 'success');
+  } catch (e) {
+    showToast('Error al leer el archivo: ' + e.message, 'error');
+  }
+}
+
+function resetData() {
+  if (!confirm('¿Borrar TODOS los datos? Esta acción no se puede deshacer.')) return;
+  moves = [];
+  save(); renderAll();
+  showToast('Datos eliminados', 'success');
+}
+
+// ── Navigation ────────────────────────────────────────────────────────────────
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(el => {
+    const onclick = el.getAttribute('onclick') || '';
+    el.classList.toggle('active', onclick.includes(`'${id}'`));
+  });
+  if (id === 'resumen') renderAll();
+  if (id === 'activos') renderEmpresas();
+  if (id === 'analisis') renderAnalisis();
+  if (id === 'opciones') initOpcionesSection();
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast toast-${type} show`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ── Mobile detail sheet ───────────────────────────────────────────────────────
+function openMobDetail(ticker) {
+  const { closed } = calcFIFO();
+  const allOps = closed.filter(c => c.ticker === ticker);
+  if (!allOps.length) return;
+
+  // Group ops by sellDate
+  const tradeMap = {};
+  allOps.forEach(c => {
+    if (!tradeMap[c.sellDate]) tradeMap[c.sellDate] = [];
+    tradeMap[c.sellDate].push(c);
+  });
+  const trades = Object.values(tradeMap).sort((a,b) => new Date(a[0].sellDate) - new Date(b[0].sellDate));
+
+  const overlapping = datesOverlap(allOps);
+  const useColors = trades.length > 1 && !overlapping;
+  const bandColors = ['#60a5fa22','#c8f06022','#f8717122','#a78bfa22','#fbbf2422'];
+
+  const gRealCommission = allOps[0].tickerTotalCommission || 0;
+  const gRawProfit = allOps.reduce((s,c)=>s+c.profit,0);
+  const gProfit = gRawProfit - gRealCommission;
+  const gInvested = allOps.reduce((s,c)=>s+c.buyPrice*c.qty,0);
+  const pct = gInvested > 0 ? (gProfit/gInvested)*100 : 0;
+
+  // Helper: censors numbers in hidden mode
+  const h = (val) => hiddenMode ? '<span class="hidden-val">••••</span>' : val;
+
+  document.getElementById('mob-detail-ticker').innerHTML =
+    `${ticker} <span style="font-size:.8rem;font-weight:400;color:${gProfit>=0?'var(--green)':'var(--red)'}">
+      ${gProfit>=0?'+':''}${h(fmtEurRaw(gProfit))}</span>`;
+
+  const cards = trades.map((tradeOps, idx) => {
+    const bg = useColors ? `background:${bandColors[idx % bandColors.length]};` : '';
+    const isMerged = tradeOps.length > 1;
+    const groupHeader = isMerged ? `<div style="font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Venta ${idx+1} — ${fmtDate(tradeOps[0].sellDate)} (${tradeOps.length} lotes)</div>` : '';
+    const subCards = tradeOps.map((c, subIdx) => {
+      const cProfit = c.profit;
+      const cInvested = c.buyPrice * c.qty;
+      const cPct = cInvested > 0 ? (cProfit / cInvested) * 100 : 0;
+      return `<div style="${isMerged ? 'margin-left:.75rem;border-left:2px solid var(--border2);padding-left:.75rem;margin-bottom:.5rem' : ''}">
+        ${isMerged ? `<div style="font-size:.65rem;color:var(--text3);margin-bottom:.35rem">Lote ${subIdx+1}</div>` : ''}
+        <div class="mob-op-row"><span class="mob-op-label">Resultado</span><span class="mono ${cProfit>=0?'pos':'neg'}" style="font-weight:600">${cProfit>=0?'+':''}${h(fmtEurRaw(cProfit))}</span></div>
+        <div class="mob-op-row"><span class="mob-op-label">Acciones</span><span class="mob-op-val">${fmtNum(c.qty)}</span></div>
+        <div class="mob-op-row"><span class="mob-op-label">Compra</span><span class="mob-op-val">${h(fmtEurRaw(c.buyPrice))} · ${fmtDate(c.buyDate)}</span></div>
+        <div class="mob-op-row"><span class="mob-op-label">Venta</span><span class="mob-op-val">${h(fmtEurRaw(c.sellPrice))} · ${fmtDate(c.sellDate)}</span></div>
+        <div class="mob-op-row"><span class="mob-op-label">Rentab.</span><span class="mob-op-val ${cPct>=0?'pos':'neg'}">${fmtPct(cPct)}</span></div>
+        <div class="mob-op-row"><span class="mob-op-label">Tiempo</span><span class="mob-op-val">${formatDuration(c.days)}</span></div>
+      </div>`;
+    }).join(isMerged ? '<hr style="border:none;border-top:1px solid var(--border);margin:.5rem 0">' : '');
+    return `<div class="mob-op-card" style="${bg}border-radius:10px;margin-bottom:.75rem">${groupHeader}${subCards}</div>`;
+  }).join('');
+
+  const summary = `<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1rem;margin-bottom:1rem">
+    <div class="mob-op-row"><span class="mob-op-label">Rentabilidad total</span><span class="mono ${pct>=0?'pos':'neg'}">${fmtPct(pct)}</span></div>
+    <div class="mob-op-row"><span class="mob-op-label">Comisiones pagadas</span><span class="mono neg">-${h(fmtEurRaw(gRealCommission))}</span></div>
+  </div>`;
+
+  document.getElementById('mob-detail-body').innerHTML = summary + cards;
+  const overlay = document.getElementById('mob-detail-overlay');
+  const sheet = document.getElementById('mob-detail-sheet');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+
+  overlay.onclick = (e) => { if (e.target === overlay) closeMobDetailSheet(); };
+
+  // Swipe down on whole sheet to close — use AbortController to clean up on next open
+  if (sheet._swipeAbort) sheet._swipeAbort.abort();
+  const ac = new AbortController();
+  sheet._swipeAbort = ac;
+  const sig = { signal: ac.signal, passive: true };
+
+  let startY = 0, isDragging = false;
+  sheet.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+    isDragging = true;
+    sheet.style.transition = 'none';
+  }, sig);
+  sheet.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const dy = e.touches[0].clientY - startY;
+    if (dy > 0 && sheet.scrollTop <= 0) sheet.style.transform = `translateY(${dy}px)`;
+  }, sig);
+  sheet.addEventListener('touchend', (e) => {
+    isDragging = false;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (dy > 80 && sheet.scrollTop <= 0) closeMobDetailSheet();
+    else { sheet.style.transition = 'transform .2s ease'; sheet.style.transform = ''; }
+  }, { signal: ac.signal });
+}
+
+function openMobDetailOpen(ticker) {
+  const { open } = calcFIFO();
+  const pos = open.find(o => o.ticker === ticker);
+  if (!pos) return;
+
+  const e = empresas.find(x => x.nombre === ticker);
+  const h = (val) => hiddenMode ? '<span class="hidden-val">••••</span>' : val;
+
+  document.getElementById('mob-detail-ticker').innerHTML =
+    `${ticker}${e?.ticker ? ` <span style="font-size:.75rem;font-weight:400;color:var(--text3);font-family:var(--mono)">${e.ticker}</span>` : ''}`;
+
+  // Summary card (acciones) — verde
+  const summary = `<div style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3);border-radius:10px;padding:.875rem 1rem;margin-bottom:1rem">
+    <div class="mob-op-row"><span class="mob-op-label">Acciones</span><span class="mono">${fmtNum(pos.qty)}</span></div>
+    <div class="mob-op-row"><span class="mob-op-label">Precio medio</span><span class="mono">${h(fmtEurRaw(pos.avgPrice))}</span></div>
+    <div class="mob-op-row"><span class="mob-op-label">Invertido</span><span class="mono">${h(fmtEurRaw(pos.total))}</span></div>
+    <div class="mob-op-row"><span class="mob-op-label">Comisiones pagadas</span><span class="mono neg">-${h(fmtEurRaw(pos.tickerTotalCommission||0))}</span></div>
+    ${e?.tipo ? `<div class="mob-op-row"><span class="mob-op-label">Tipo</span><span class="mob-op-val">${e.tipo}</span></div>` : ''}
+    ${e?.sector ? `<div class="mob-op-row"><span class="mob-op-label">Sector</span><span class="mob-op-val">${e.sector}</span></div>` : ''}
+  </div>`;
+
+  // Niveles card — azul
+  const nivRows = [
+    ['Venta deseada', e?.venta_deseada, true],
+    ['Nivel 1', e?.nivel1], ['Nivel 2', e?.nivel2],
+    ['Nivel 3', e?.nivel3], ['Nivel 4', e?.nivel4],
+    ['Nivel Extra', e?.nivel_extra]
+  ].filter(([,v]) => v != null && v !== '');
+  const niveles = nivRows.length ? `<div style="background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.3);border-radius:10px;padding:.875rem 1rem;margin-bottom:1rem">
+    <div style="font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Niveles</div>
+    ${nivRows.map(([label, val, isVenta]) => `<div class="mob-op-row"><span class="mob-op-label">${label}</span><span class="mono${isVenta?'':''}" style="${isVenta?'color:var(--accent);font-weight:600':''}">${displayNivel(val)}</span></div>`).join('')}
+  </div>` : '';
+
+  // Lots cards (each open buy batch, FIFO order) — amarillo
+  const lotsCards = (pos.lots || []).map((lot, idx) => {
+    const lotTotal = lot.qty * lot.price;
+    return `<div class="mob-op-card" style="background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.3);border-radius:10px;margin-bottom:.75rem">
+      <div style="font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Lote ${idx+1}</div>
+      <div class="mob-op-row"><span class="mob-op-label">Fecha compra</span><span class="mob-op-val">${fmtDate(lot.date)}</span></div>
+      <div class="mob-op-row"><span class="mob-op-label">Acciones</span><span class="mob-op-val">${fmtNum(lot.qty)}</span></div>
+      <div class="mob-op-row"><span class="mob-op-label">Precio compra</span><span class="mob-op-val">${h(fmtEurRaw(lot.price))}</span></div>
+      <div class="mob-op-row"><span class="mob-op-label">Invertido</span><span class="mob-op-val">${h(fmtEurRaw(lotTotal))}</span></div>
+    </div>`;
+  }).join('');
+
+  // Precio actual — gris neutro, bajo demanda
+  const safeTicker = ticker.replace(/'/g, "\\'");
+  const livePriceCard = `<div style="background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1rem;margin-bottom:1rem">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+      <span style="font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em">Precio actual</span>
+      <button id="live-price-btn-mob" onclick="fetchLivePriceOpenRow('${safeTicker}', true)" class="btn btn-sm" style="font-size:.68rem;padding:.2rem .5rem">↻ Ver</button>
+    </div>
+    <div id="live-price-result-mob" style="font-size:.78rem;color:var(--text3)">Pulsa para consultar</div>
+  </div>`;
+
+  document.getElementById('mob-detail-body').innerHTML = summary + niveles + livePriceCard + lotsCards;
+  const overlay = document.getElementById('mob-detail-overlay');
+  const sheet = document.getElementById('mob-detail-sheet');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+
+  overlay.onclick = (e) => { if (e.target === overlay) closeMobDetailSheet(); };
+
+  if (sheet._swipeAbort) sheet._swipeAbort.abort();
+  const ac = new AbortController();
+  sheet._swipeAbort = ac;
+  const sig = { signal: ac.signal, passive: true };
+
+  let startY = 0, isDragging = false;
+  sheet.addEventListener('touchstart', (ev) => {
+    startY = ev.touches[0].clientY;
+    isDragging = true;
+    sheet.style.transition = 'none';
+  }, sig);
+  sheet.addEventListener('touchmove', (ev) => {
+    if (!isDragging) return;
+    const dy = ev.touches[0].clientY - startY;
+    if (dy > 0 && sheet.scrollTop <= 0) sheet.style.transform = `translateY(${dy}px)`;
+  }, sig);
+  sheet.addEventListener('touchend', (ev) => {
+    isDragging = false;
+    const dy = ev.changedTouches[0].clientY - startY;
+    if (dy > 80 && sheet.scrollTop <= 0) closeMobDetailSheet();
+    else { sheet.style.transition = 'transform .2s ease'; sheet.style.transform = ''; }
+  }, { signal: ac.signal });
+}
+
+function closeMobDetailSheet() {
+  const overlay = document.getElementById('mob-detail-overlay');
+  const sheet = document.getElementById('mob-detail-sheet');
+  if (!sheet) return;
+  sheet.style.transform = 'translateY(100%)';
+  sheet.style.transition = 'transform .3s ease';
+  setTimeout(() => {
+    overlay.classList.remove('show');
+    sheet.style.transform = '';
+    sheet.style.transition = '';
+    document.body.style.overflow = '';
+  }, 280);
+}
+
+function closeMobDetail(e) {
+  if (e.target === document.getElementById('mob-detail-overlay')) closeMobDetailSheet();
+}
+
+function renderOpen() {
+  const { open } = calcFIFO();
+  let data = activeFilter === 'todos' ? open : open.filter(o => o.ticker.toLowerCase().includes(activeFilter.toLowerCase()));
+  data = data.slice().sort((a,b) => { let va=a[openSortCol],vb=b[openSortCol]; if(typeof va==='string') return openSortDir==='asc'?String(va).localeCompare(String(vb)):String(vb).localeCompare(String(va)); return openSortDir==='asc'?va-vb:vb-va; });
+  const countEl = document.getElementById('open-count');
+  if (countEl) countEl.textContent = data.length + ' posiciones';
+  ['ticker','qty','avgPrice','total'].forEach(col=>{const el=document.querySelector('[data-osort="'+col+'"]');const ic=document.getElementById('osi-'+col);if(el&&ic){el.classList.toggle('sort-active',col===openSortCol);ic.textContent=col===openSortCol?(openSortDir==='asc'?'↑':'↓'):'↕';}});
+  const tb = document.getElementById('open-body');
+  if (!tb) return;
+  if (!data.length) {
+    tb.innerHTML = '<tr><td colspan="4" class="empty"><div class="empty-icon">○</div>Sin posiciones abiertas</td></tr>';
+    return;
+  }
+  const isMob = window.innerWidth <= 768;
+  tb.innerHTML = data.map(o => {
+    const e = empresas.find(x => x.nombre === o.ticker);
+    const ticker = e?.ticker ? `<span style="font-size:.65rem;color:var(--text3);display:block;font-family:var(--mono);margin-top:1px">${e.ticker}</span>` : '';
+    const niv = [e?.nivel1, e?.nivel2, e?.nivel3, e?.nivel4].filter(Boolean);
+    const nivHtml = (() => {
+      const parts = [];
+      if (e?.venta_deseada) parts.push(`<span style="color:var(--accent);font-weight:600">${displayNivel(e.venta_deseada)} ↑</span>`);
+      if (niv.length) parts.push(`<span style="opacity:.7">${niv.map(displayNivel).join(' · ')}</span>`);
+      return parts.length ? `<span style="font-size:.62rem;display:block;margin-top:2px;font-family:var(--mono)">${parts.join('<span style="color:var(--text3)"> | </span>')}</span>` : '';
+    })();
+
+    const safeN = o.ticker.replace(/'/g, "\\'");
+    const safeId = o.ticker.replace(/[^a-zA-Z0-9]/g,'_');
+
+    if (isMob) {
+      return `<tr class="open-row-mobile" onclick="openMobDetailOpen('${safeN}')">
+        <td class="ticker-cell">${o.ticker}${ticker}${nivHtml}</td>
+        <td class="mono col-desktop">${fmtNum(o.qty)}</td>
+        <td class="mono col-desktop">${fmtEur(o.avgPrice)}</td>
+        <td class="mono">${fmtEur(o.total)}</td>
+      </tr>`;
+    }
+
+    // Desktop: expandable row
+    const isExpanded = openExpandedRows.has(o.ticker);
+
+    const expandRow = isExpanded ? (() => {
+      const nivRows = [
+        ['Venta deseada', e?.venta_deseada, true],
+        ['Nivel 1', e?.nivel1], ['Nivel 2', e?.nivel2],
+        ['Nivel 3', e?.nivel3], ['Nivel 4', e?.nivel4],
+        ['Nivel Extra', e?.nivel_extra]
+      ].filter(([,v]) => v != null && v !== '');
+
+      const nivCard = `<div style="flex:1;background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.3);border-radius:10px;padding:.875rem 1rem">
+        <div style="font-size:.65rem;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.6rem">Niveles</div>
+        ${nivRows.length ? nivRows.map(([label, val, isVenta]) => `
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid rgba(96,165,250,.15)">
+            <span style="font-size:.75rem;color:var(--text3)">${label}</span>
+            <span class="mono" style="font-size:.8rem;${isVenta?'color:var(--accent);font-weight:600':''}">${displayNivel(val)}</span>
+          </div>`).join('') : `<span style="font-size:.78rem;color:var(--text3)">Sin niveles</span>`}
+      </div>`;
+
+      const lots = o.lots || [];
+      const lotsCard = `<div style="flex:1;background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.3);border-radius:10px;padding:.875rem 1rem">
+        <div style="font-size:.65rem;font-weight:700;color:#facc15;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.6rem">Lotes</div>
+        ${lots.length ? lots.map((lot, idx) => `
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid rgba(250,204,21,.15)">
+            <span style="font-size:.75rem;color:var(--text3)">Lote ${idx+1} · ${fmtDate(lot.date)}</span>
+            <span class="mono" style="font-size:.8rem">${fmtNum(lot.qty)} × ${fmtEurRaw(lot.price)}</span>
+          </div>`).join('') : `<span style="font-size:.78rem;color:var(--text3)">Sin lotes</span>`}
+      </div>`;
+
+      const livePriceCard = `<div style="flex:1;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:.875rem 1rem">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem">
+          <div style="font-size:.65rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.07em">Precio actual</div>
+          <button id="live-price-btn-${safeId}" onclick="fetchLivePriceOpenRow('${safeN}')" class="btn btn-sm" style="font-size:.68rem;padding:.2rem .5rem">↻ Ver</button>
+        </div>
+        <div id="live-price-result-${safeId}" style="font-size:.78rem;color:var(--text3)">Pulsa para consultar</div>
+      </div>`;
+
+      return `<tr style="background:rgba(200,240,96,.018)">
+        <td colspan="4" style="padding:.5rem 1.5rem .875rem">
+          <div style="display:flex;gap:1rem">${nivCard}${lotsCard}${livePriceCard}</div>
+        </td>
+      </tr>`;
+    })() : '';
+
+    return `<tr style="cursor:pointer" onclick="toggleOpenRow('${safeN}')">
+      <td class="ticker-cell">${o.ticker}${ticker}
+        <span style="font-size:.6rem;color:var(--text3);margin-left:4px">${isExpanded?'▲':'▼'}</span>
+      </td>
+      <td class="mono col-desktop">${fmtNum(o.qty)}</td>
+      <td class="mono col-desktop">${fmtEur(o.avgPrice)}</td>
+      <td class="mono">${fmtEur(o.total)}</td>
+    </tr>${expandRow}`;
+  }).join('');
+}
+
+let activosSearchQuery = '';
+let activosFilterTipo = '';
+let activosFilterSector = '';
+
+function filterActivos(q) {
+  activosSearchQuery = q.toLowerCase().trim();
+  renderEmpresas();
+}
+
+function filterActivosCol(col, val) {
+  if (col === 'tipo') activosFilterTipo = val;
+  if (col === 'sector') activosFilterSector = val;
+  renderEmpresas();
+}
+
+function clearActivosFilters() {
+  activosSearchQuery = '';
+  activosFilterTipo = '';
+  activosFilterSector = '';
+  document.getElementById('activos-search').value = '';
+  document.getElementById('activos-filter-tipo').value = '';
+  document.getElementById('activos-filter-sector').value = '';
+  renderEmpresas();
+}
+
+// ── Tipo de cambio USD/EUR y conversión de niveles ──────────────────────────
+function saveExchangeRate(val) {
+  const rate = parseFloat(val);
+  if (isNaN(rate) || rate <= 0) return;
+  usdEurRate = rate;
+  localStorage.setItem('pf_usd_eur_rate', rate);
+  renderEmpresas();
+  showSyncStatus('✓ Tipo de cambio guardado', 'ok');
+}
+
+function saveNivelThreshold(val) {
+  const threshold = parseFloat(val);
+  if (isNaN(threshold) || threshold <= 0) return;
+  NIVEL_THRESHOLD_EUR = threshold;
+  localStorage.setItem('pf_nivel_threshold', threshold);
+  showSyncStatus('✓ Umbral de nivel guardado', 'ok');
+}
+
+function initOpcionesSection() {
+  const rateInput = document.getElementById('usd-eur-rate');
+  if (rateInput) rateInput.value = usdEurRate;
+  const thresholdInput = document.getElementById('nivel-threshold-input');
+  if (thresholdInput) thresholdInput.value = NIVEL_THRESHOLD_EUR;
+  const curLabel = document.getElementById('niveles-currency-label');
+  if (curLabel) curLabel.textContent = nivelesCurrency === 'EUR' ? '€' : '$';
+}
+
+function toggleNivelesCurrency() {
+  nivelesCurrency = nivelesCurrency === 'EUR' ? 'USD' : 'EUR';
+  localStorage.setItem('pf_niveles_currency', nivelesCurrency);
+  const label = document.getElementById('niveles-currency-label');
+  if (label) label.textContent = nivelesCurrency === 'EUR' ? '€' : '$';
+  renderEmpresas();
+}
+
+function displayNivel(val) {
+  if (val == null || val === '') return '';
+  const n = parseFloat(val);
+  if (isNaN(n)) return '';
+  // Stored value is assumed EUR by default; convert to USD for display if toggled
+  const display = nivelesCurrency === 'USD' ? n / (usdEurRate || 0.92) : n;
+  return display.toFixed(2);
+}
+
+// ── ANÁLISIS: Distribución de cartera ──────────────────────────────────────────
+let distView = 'sector';
+function setDistView(view) {
+  distView = view;
+  ['sector', 'subsector'].forEach(v => {
+    document.getElementById('dist-tab-' + v).classList.toggle('btn-primary', v === view);
+  });
+  renderDistribution();
+}
+
+function renderDistribution() {
+  const { open } = calcFIFO();
+  const listEl = document.getElementById('distribution-list');
+  if (!listEl) return;
+
+  if (!open.length) {
+    listEl.innerHTML = '<div class="empty"><div class="empty-icon">○</div>Sin posiciones abiertas todavía</div>';
+    return;
+  }
+
+  // Agrupa el capital invertido (posiciones abiertas) según la vista seleccionada
+  const groups = {};
+  open.forEach(o => {
+    const emp = empresas.find(e => e.nombre === o.ticker);
+    let key;
+    if (distView === 'sector') key = emp?.sector || 'Sin sector';
+    else if (distView === 'subsector') key = emp?.subsector || 'Sin subsector';
+    else if (distView === 'tipo') key = emp?.tipo || 'Sin tipo';
+    else key = o.ticker;
+    groups[key] = (groups[key] || 0) + o.total;
+  });
+
+  const total = Object.values(groups).reduce((s, v) => s + v, 0);
+  const rows = Object.entries(groups).sort((a, b) => b[1] - a[1]);
+
+  const palette = ['#c8f060', '#60a5fa', '#f59e0b', '#a78bfa', '#34d399', '#f87171', '#fb923c', '#22d3ee', '#e879f9', '#94a3b8'];
+
+  listEl.innerHTML = rows.map(([label, val], i) => {
+    const pct = total > 0 ? (val / total * 100) : 0;
+    const color = palette[i % palette.length];
+    return `<div style="display:flex;align-items:center;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--border)">
+      <span style="width:10px;height:10px;border-radius:3px;background:${color};flex-shrink:0"></span>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.3rem">
+          <span style="font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${label}</span>
+          <span class="mono money" style="flex-shrink:0;margin-left:.5rem">${fmtEurRaw(val)}</span>
+        </div>
+        <div style="height:6px;background:var(--surface2);border-radius:3px;overflow:hidden">
+          <div style="height:100%;width:${pct}%;background:${color}"></div>
+        </div>
+      </div>
+      <span class="mono" style="font-size:.78rem;color:var(--text3);width:42px;text-align:right;flex-shrink:0">${pct.toFixed(1)}%</span>
+    </div>`;
+  }).join('');
+}
+
+// ── ANÁLISIS: Evolución de la cartera (sin precios históricos de mercado) ──────
+// ── ANÁLISIS: Evolución por sector ──────────────────────────────────────────
+let sectorEvoMode = 'stacked';
+let sectorEvoHidden = new Set(); // sectores/subsectores desactivados en modo líneas
+let sectorEvoDimension = 'sector'; // 'sector' | 'subsector'
+const SECTOR_PALETTE = ['#c8f060', '#60a5fa', '#f59e0b', '#a78bfa', '#34d399', '#f87171', '#fb923c', '#22d3ee', '#e879f9', '#94a3b8', '#fbbf24', '#818cf8'];
+
+function setSectorEvoDimension(dim) {
+  sectorEvoDimension = dim;
+  sectorEvoHidden = new Set(); // reset al cambiar de dimensión, evita confundir sector/subsector ocultos
+  const titleEl = document.getElementById('sector-evo-title');
+  if (titleEl) titleEl.textContent = dim === 'subsector' ? 'Evolución por subsector' : 'Evolución por sector';
+  renderSectorEvolutionChart();
+}
+
+function setSectorEvoMode(mode) {
+  sectorEvoMode = mode;
+  document.getElementById('sector-evo-mode-stacked').classList.toggle('btn-primary', mode === 'stacked');
+  document.getElementById('sector-evo-mode-lines').classList.toggle('btn-primary', mode === 'lines');
+  document.getElementById('sector-evo-checkboxes').style.display = mode === 'lines' ? 'flex' : 'none';
+  renderSectorEvolutionChart();
+}
+
+function toggleSectorEvoLine(sector) {
+  if (sectorEvoHidden.has(sector)) sectorEvoHidden.delete(sector);
+  else sectorEvoHidden.add(sector);
+  renderSectorEvolutionChart();
+}
+
+// Reconstruye, movimiento a movimiento, el capital invertido a coste por sector/subsector en cada fecha
+function buildSectorSeries() {
+  const sorted = moves.slice().sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+  const queues = {}; // ticker -> [{qty, price}]
+  const sectorTotals = {}; // sector/subsector -> capital invertido actual a coste
+
+  const noLabel = sectorEvoDimension === 'subsector' ? 'Sin subsector' : 'Sin sector';
+  const sectorOf = ticker => {
+    const emp = empresas.find(e => e.nombre === ticker);
+    const val = sectorEvoDimension === 'subsector' ? emp?.subsector : emp?.sector;
+    return val || noLabel;
+  };
+
+  const points = []; // { date, totals: {sector: valor} }
+
+  sorted.forEach(m => {
+    if (!queues[m.ticker]) queues[m.ticker] = [];
+    const q = queues[m.ticker];
+    const sector = sectorOf(m.ticker);
+    if (!sectorTotals[sector]) sectorTotals[sector] = 0;
+
+    if (m.tipo === 'compra') {
+      q.push({ qty: m.cantidad, price: m.precio });
+      sectorTotals[sector] += m.cantidad * m.precio;
+    } else {
+      let rem = m.cantidad;
+      while (rem > 0 && q.length > 0) {
+        const lot = q[0];
+        const matched = Math.min(lot.qty, rem);
+        sectorTotals[sector] -= lot.price * matched;
+        lot.qty -= matched;
+        rem -= matched;
+        if (lot.qty <= 0) q.shift();
+      }
+    }
+    points.push({ date: m.fecha.split('T')[0], totals: { ...sectorTotals } });
+  });
+
+  // Colapsa a un punto por fecha (último estado del día)
+  const byDate = {};
+  points.forEach(p => { byDate[p.date] = p; });
+  const series = Object.values(byDate).sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  const allSectors = [...new Set(Object.values(byDate).flatMap(p => Object.keys(p.totals)))];
+  return { series, sectors: allSectors };
+}
+
+function renderSectorEvolutionChart() {
+  const container = document.getElementById('sector-evo-chart-container');
+  const checkboxesEl = document.getElementById('sector-evo-checkboxes');
+  const legendEl = document.getElementById('sector-evo-legend');
+  if (!container) return;
+
+  if (!moves.length) {
+    container.innerHTML = '<div class="empty"><div class="empty-icon">○</div>Sin movimientos todavía</div>';
+    checkboxesEl.innerHTML = '';
+    legendEl.innerHTML = '';
+    return;
+  }
+
+  const { series, sectors } = buildSectorSeries();
+
+  if (series.length < 2 || !sectors.length) {
+    container.innerHTML = '<div class="empty"><div class="empty-icon">○</div>Añade más movimientos para ver la evolución</div>';
+    checkboxesEl.innerHTML = '';
+    legendEl.innerHTML = '';
+    return;
+  }
+
+  const colorOf = sector => SECTOR_PALETTE[sectors.indexOf(sector) % SECTOR_PALETTE.length];
+
+  // Checkboxes (solo relevantes en modo líneas)
+  checkboxesEl.innerHTML = sectors.map(s => {
+    const active = !sectorEvoHidden.has(s);
+    const color = colorOf(s);
+    return `<button onclick="toggleSectorEvoLine('${s.replace(/'/g,"\\'")}')" class="btn btn-sm" style="font-size:.7rem;padding:.25rem .6rem;opacity:${active ? 1 : .4};border-color:${active ? color : 'var(--border)'}">
+      <span style="width:8px;height:8px;border-radius:2px;background:${color};display:inline-block;margin-right:5px;vertical-align:middle"></span>${s}
+    </button>`;
+  }).join('');
+
+  // Leyenda (siempre visible, refleja lo que se está dibujando)
+  const visibleSectors = sectorEvoMode === 'stacked' ? sectors : sectors.filter(s => !sectorEvoHidden.has(s));
+  legendEl.innerHTML = visibleSectors.map(s => {
+    const color = colorOf(s);
+    return `<div style="display:flex;align-items:center;gap:.4rem"><span style="width:12px;height:12px;background:${color};display:inline-block;border-radius:2px"></span>${s}</div>`;
+  }).join('');
+
+  const isMobile = window.innerWidth <= 768;
+  const W = Math.max(container.clientWidth || 600, isMobile ? 500 : 600);
+  const H = isMobile ? 240 : 300;
+  const padL = 56, padR = 16, padT = 16, padB = 32;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const xFor = i => padL + (i / (series.length - 1)) * plotW;
+
+  let svgContent;
+
+  if (sectorEvoMode === 'stacked') {
+    // Área apilada: cada sector se acumula sobre el anterior
+    const maxTotal = Math.max(1, ...series.map(p => sectors.reduce((s, sec) => s + Math.max(0, p.totals[sec] || 0), 0)));
+    const yFor = v => padT + plotH - (v / maxTotal) * plotH;
+
+    let cumulative = series.map(() => 0);
+    const layers = sectors.map(sector => {
+      const top = series.map((p, i) => {
+        cumulative[i] += Math.max(0, p.totals[sector] || 0);
+        return cumulative[i];
+      });
+      const bottom = series.map((p, i) => cumulative[i] - Math.max(0, p.totals[sector] || 0));
+      const topPath = top.map((v, i) => `${i === 0 ? 'M' : 'L'} ${xFor(i).toFixed(1)} ${yFor(v).toFixed(1)}`).join(' ');
+      const bottomPath = bottom.slice().reverse().map((v, i) => `L ${xFor(series.length - 1 - i).toFixed(1)} ${yFor(v).toFixed(1)}`).join(' ');
+      return `<path d="${topPath} ${bottomPath} Z" fill="${colorOf(sector)}" fill-opacity="0.75" stroke="${colorOf(sector)}" stroke-width="1"/>`;
+    });
+
+    const gridLines = [];
+    for (let i = 0; i <= 3; i++) {
+      const v = maxTotal * i / 3;
+      const y = yFor(v);
+      gridLines.push(`<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="var(--border)" stroke-width="1"/>`);
+      gridLines.push(`<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="var(--text3)" font-family="var(--mono)">${fmtCompactEur(v)}</text>`);
+    }
+
+    const xLabels = [];
+    const labelIdxs = series.length <= 4 ? series.map((_, i) => i) : [0, Math.floor((series.length-1)/3), Math.floor((series.length-1)*2/3), series.length-1];
+    [...new Set(labelIdxs)].forEach(i => {
+      xLabels.push(`<text x="${xFor(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="var(--text3)" font-family="var(--mono)">${fmtDate(series[i].date)}</text>`);
+    });
+
+    svgContent = `${gridLines.join('')}${layers.join('')}${xLabels.join('')}`;
+  } else {
+    // Líneas individuales, solo las visibles
+    const visible = sectors.filter(s => !sectorEvoHidden.has(s));
+    if (!visible.length) {
+      container.innerHTML = '<div class="empty"><div class="empty-icon">○</div>Activa al menos un sector</div>';
+      return;
+    }
+    const allVals = series.flatMap(p => visible.map(s => Math.max(0, p.totals[s] || 0)));
+    let maxV = Math.max(1, ...allVals);
+    const yFor = v => padT + plotH - (v / maxV) * plotH;
+
+    const gridLines = [];
+    for (let i = 0; i <= 3; i++) {
+      const v = maxV * i / 3;
+      const y = yFor(v);
+      gridLines.push(`<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="var(--border)" stroke-width="1"/>`);
+      gridLines.push(`<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="var(--text3)" font-family="var(--mono)">${fmtCompactEur(v)}</text>`);
+    }
+
+    const xLabels = [];
+    const labelIdxs = series.length <= 4 ? series.map((_, i) => i) : [0, Math.floor((series.length-1)/3), Math.floor((series.length-1)*2/3), series.length-1];
+    [...new Set(labelIdxs)].forEach(i => {
+      xLabels.push(`<text x="${xFor(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="var(--text3)" font-family="var(--mono)">${fmtDate(series[i].date)}</text>`);
+    });
+
+    const lines = visible.map(sector => {
+      const path = series.map((p, i) => `${i === 0 ? 'M' : 'L'} ${xFor(i).toFixed(1)} ${yFor(Math.max(0, p.totals[sector] || 0)).toFixed(1)}`).join(' ');
+      return `<path d="${path}" fill="none" stroke="${colorOf(sector)}" stroke-width="2"/>`;
+    });
+
+    svgContent = `${gridLines.join('')}${lines.join('')}${xLabels.join('')}`;
+  }
+
+  container.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" style="display:block">${svgContent}</svg>`;
+}
+
+function renderEvolutionChart() {
+  const container = document.getElementById('evolution-chart-container');
+  if (!container) return;
+
+  if (!moves.length) {
+    container.innerHTML = '<div class="empty"><div class="empty-icon">○</div>Sin movimientos todavía</div>';
+    return;
+  }
+
+  // Reconstruye el beneficio realizado acumulado mediante FIFO
+  const sorted = moves.slice().sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+  const queues = {};
+  let realizedCum = 0;
+  const points = [];
+
+  sorted.forEach(m => {
+    if (!queues[m.ticker]) queues[m.ticker] = [];
+    const q = queues[m.ticker];
+    if (m.tipo === 'compra') {
+      q.push({ qty: m.cantidad, price: m.precio });
+    } else {
+      let rem = m.cantidad;
+      while (rem > 0 && q.length > 0) {
+        const lot = q[0];
+        const matched = Math.min(lot.qty, rem);
+        realizedCum += (m.precio - lot.price) * matched;
+        lot.qty -= matched;
+        rem -= matched;
+        if (lot.qty <= 0) q.shift();
+      }
+    }
+    points.push({ date: m.fecha.split('T')[0], profit: realizedCum });
+  });
+
+  // Colapsa a un punto por fecha
+  const byDate = {};
+  points.forEach(p => { byDate[p.date] = p; });
+  const series = Object.values(byDate).sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  const hasSales = series.some(p => p.profit !== 0);
+  if (series.length < 2 || !hasSales) {
+    container.innerHTML = '<div class="empty"><div class="empty-icon">○</div>Aún no hay ventas para mostrar la evolución del beneficio</div>';
+    return;
+  }
+
+  // SVG
+  const isMobile = window.innerWidth <= 768;
+  const W = Math.max(container.clientWidth || 600, isMobile ? 500 : 600);
+  const H = isMobile ? 220 : 280;
+  const padL = 56, padR = 16, padT = 16, padB = 32;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+
+  const allVals = series.map(p => p.profit);
+  let minV = Math.min(0, ...allVals), maxV = Math.max(0, ...allVals, 1);
+  if (minV === maxV) { minV -= 1; maxV += 1; }
+  const range = maxV - minV;
+
+  const xFor = i => padL + (i / Math.max(series.length - 1, 1)) * plotW;
+  const yFor = v => padT + plotH - ((v - minV) / range) * plotH;
+  const y0 = yFor(0); // posición Y del cero
+
+  // Línea de la señal
+  const linePath = series.map((p, i) => `${i === 0 ? 'M' : 'L'} ${xFor(i).toFixed(1)} ${yFor(p.profit).toFixed(1)}`).join(' ');
+
+  // Área rellena: dividida en positivo (verde) y negativo (rojo)
+  const areaPath = series.map((p, i) => `${i === 0 ? 'M' : 'L'} ${xFor(i).toFixed(1)} ${yFor(p.profit).toFixed(1)}`).join(' ')
+    + ` L ${xFor(series.length - 1).toFixed(1)} ${y0.toFixed(1)} L ${xFor(0).toFixed(1)} ${y0.toFixed(1)} Z`;
+
+  // Clip positivo (solo por encima del cero)
+  const clipPosId = 'clip-pos-' + Math.floor(Math.random() * 9999);
+  const clipNegId = 'clip-neg-' + Math.floor(Math.random() * 9999);
+
+  // Líneas guía Y
+  const gridLines = [];
+  for (let i = 0; i <= 3; i++) {
+    const v = minV + (range * i / 3);
+    const y = yFor(v);
+    const isZero = Math.abs(v) < range * 0.05;
+    gridLines.push(`<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="${isZero ? 'var(--border2)' : 'var(--border)'}" stroke-width="${isZero ? 1.5 : 1}"/>`);
+    gridLines.push(`<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="${v >= 0 ? 'var(--text3)' : '#f87171'}" font-family="var(--mono)">${fmtCompactEur(v)}</text>`);
+  }
+
+  // Línea del cero explícita si cae entre gridlines
+  const zeroLine = `<line x1="${padL}" y1="${y0.toFixed(1)}" x2="${W - padR}" y2="${y0.toFixed(1)}" stroke="var(--text3)" stroke-width="1" stroke-dasharray="4 3"/>`;
+
+  // Eje X
+  const xLabels = [];
+  const labelIdxs = series.length <= 4 ? series.map((_, i) => i) : [0, Math.floor((series.length-1)/3), Math.floor((series.length-1)*2/3), series.length-1];
+  [...new Set(labelIdxs)].forEach(i => {
+    xLabels.push(`<text x="${xFor(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="var(--text3)" font-family="var(--mono)">${fmtDate(series[i].date)}</text>`);
+  });
+
+  const svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" style="display:block">
+    <defs>
+      <clipPath id="${clipPosId}"><rect x="${padL}" y="${padT}" width="${plotW}" height="${Math.max(0, y0 - padT)}"/></clipPath>
+      <clipPath id="${clipNegId}"><rect x="${padL}" y="${y0}" width="${plotW}" height="${Math.max(0, padT + plotH - y0)}"/></clipPath>
+    </defs>
+    ${gridLines.join('')}
+    ${zeroLine}
+    <path d="${areaPath}" fill="rgba(74,222,128,.18)" clip-path="url(#${clipPosId})"/>
+    <path d="${areaPath}" fill="rgba(248,113,113,.18)" clip-path="url(#${clipNegId})"/>
+    <path d="${linePath}" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    ${xLabels.join('')}
+  </svg>`;
+
+  container.innerHTML = svg;
+}
+
+function fmtCompactEur(v) {
+  const abs = Math.abs(v);
+  if (abs >= 1000) return (v/1000).toFixed(1).replace(/\.0$/,'') + 'k€';
+  return Math.round(v) + '€';
+}
+
+function renderAnalisis() {
+  renderDistribution();
+  renderEvolutionChart();
+  renderSectorEvolutionChart();
+}
+
+function renderEmpresas() {
+  const tb = document.getElementById('empresas-body');
+  const countEl = document.getElementById('empresas-count');
+  if (!tb) return;
+
+  // All unique company names ever traded
+  const allTradedNames = [...new Set(moves.map(m => m.ticker))].sort();
+  // Empresas entries not matching any traded name (manually added watchlist)
+  const allExtraEmpresas = empresas.filter(e => !allTradedNames.includes(e.nombre));
+
+  // Populate sector dropdown options
+  const sectorSelect = document.getElementById('activos-filter-sector');
+  if (sectorSelect) {
+    const sectors = [...new Set(empresas.map(e => e.sector).filter(Boolean))].sort();
+    const current = sectorSelect.value;
+    sectorSelect.innerHTML = '<option value="">Todos los sectores</option>' +
+      sectors.map(s => `<option value="${s}">${s}</option>`).join('');
+    sectorSelect.value = sectors.includes(current) ? current : '';
+  }
+
+  // Apply filters
+  const q = activosSearchQuery;
+  const matchesFilters = (nombre, e) => {
+    if (q && !(nombre.toLowerCase().includes(q) || (e?.ticker || '').toLowerCase().includes(q))) return false;
+    if (activosFilterTipo && (e?.tipo || '') !== activosFilterTipo) return false;
+    if (activosFilterSector && (e?.sector || '') !== activosFilterSector) return false;
+    return true;
+  };
+  const hasActiveFilter = q || activosFilterTipo || activosFilterSector;
+
+  const tradedNames = allTradedNames.filter(nombre => {
+    const e = empresas.find(x => x.nombre === nombre);
+    return matchesFilters(nombre, e);
+  });
+  const extraEmpresas = allExtraEmpresas.filter(e => matchesFilters(e.nombre || e.ticker, e));
+
+  const totalRows = tradedNames.length + extraEmpresas.length;
+  const totalAll = allTradedNames.length + allExtraEmpresas.length;
+  if (countEl) countEl.textContent = hasActiveFilter ? `${totalRows} de ${totalAll} activos` : `${totalAll} activos`;
+  if (!totalAll) {
+    tb.innerHTML = '<tr><td colspan="11" class="empty"><div class="empty-icon">○</div>Sin activos</td></tr>';
+    return;
+  }
+  if (!totalRows) {
+    tb.innerHTML = `<tr><td colspan="11" class="empty"><div class="empty-icon">○</div>Sin resultados para los filtros aplicados</td></tr>`;
+    return;
+  }
+
+  const fN = v => v ? `<span class="mono" style="font-size:.8rem">${fmtEurRaw(v)}</span>` : '<span style="color:var(--text3)">—</span>';
+  const tipoColors = { 'Empresa': '#60a5fa', 'ETF': '#34d399', 'Criptomoneda': '#f59e0b', 'Índice': '#a78bfa' };
+
+  const mkRow = (nombre, e) => {
+    const tipoColor = e?.tipo ? (tipoColors[e.tipo] || 'var(--text3)') : null;
+    const tipoBadge = e?.tipo ? `<span style="font-size:.65rem;padding:.2rem .5rem;border-radius:4px;background:${tipoColor}22;color:${tipoColor};font-family:var(--mono)">${e.tipo}</span>` : '<span style="color:var(--text3)">—</span>';
+    const actions = e
+      ? `<div style="display:flex;gap:.4rem">
+          <button class="btn btn-sm" onclick="openEditEmpresa(${e.id})" title="Editar">✎</button>
+          <button class="btn btn-sm" style="color:var(--red)" onclick="deleteEmpresa(${e.id})" title="Eliminar">✕</button>
+        </div>`
+      : `<button class="btn btn-sm btn-primary" onclick="openAddEmpresaForTicker('${nombre.replace(/'/g,"\\'")}')" style="font-size:.7rem;white-space:nowrap">+ Info</button>`;
+    return `<tr>
+      <td class="ticker-cell">${nombre}</td>
+      <td class="mono" style="font-size:.85rem">${e?.ticker || '<span style="color:var(--text3)">—</span>'}</td>
+      <td class="col-desktop">${tipoBadge}</td>
+      <td class="col-desktop">
+        <div style="font-weight:600">${e?.sector || '<span style="color:var(--text3);font-weight:400">—</span>'}</div>
+        ${e?.subsector ? `<div style="font-size:.72rem;color:var(--text3);margin-top:1px">${e.subsector}</div>` : ''}
+      </td>
+      <td>${displayNivel(e?.nivel1)}</td>
+      <td>${displayNivel(e?.nivel2)}</td>
+      <td class="col-desktop">${displayNivel(e?.nivel3)}</td>
+      <td class="col-desktop">${displayNivel(e?.nivel4)}</td>
+      <td class="col-desktop">${displayNivel(e?.nivel_extra)}</td>
+      <td style="color:var(--green)">${displayNivel(e?.venta_deseada)}</td>
+      <td>${actions}</td>
+    </tr>`;
+  };
+
+  let html = '';
+  // Traded companies first (with empresa data if it exists)
+  tradedNames.forEach(nombre => {
+    const e = empresas.find(x => x.nombre === nombre);
+    html += mkRow(nombre, e);
+  });
+  // Extra empresas (watchlist entries not traded)
+  extraEmpresas.forEach(e => {
+    html += mkRow(e.nombre || e.ticker, e);
+  });
+
+  tb.innerHTML = html;
+}
+
+function openNuevoModal() {
+  document.getElementById('nuevo-modal-overlay').style.display = 'flex';
+  document.getElementById('new-fecha').value = new Date().toISOString().substring(0,16);
+}
+
+function closeNuevoModal() {
+  document.getElementById('nuevo-modal-overlay').style.display = 'none';
+}
+
+function openAddEmpresaForTicker(nombreEmpresa) {
+  editingEmpresaId = null;
+  document.getElementById('empresa-modal-title').textContent = 'Añadir activo — ' + nombreEmpresa;
+  document.getElementById('em-ticker').value = '';
+  document.getElementById('em-ticker').readOnly = false;
+  document.getElementById('em-nombre').value = nombreEmpresa;
+  document.getElementById('em-tipo').value = '';
+  ['sector','subsector','n1','n2','n3','n4','nextra','venta'].forEach(f => {
+    const el = document.getElementById('em-' + f);
+    if (el) el.value = '';
+  });
+  document.getElementById('empresa-modal-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('em-ticker').focus(), 100);
+}
+
+function openAddEmpresa() {
+  editingEmpresaId = null;
+  document.getElementById('empresa-modal-title').textContent = 'Añadir activo';
+  document.getElementById('em-ticker').readOnly = false;
+  document.getElementById('em-tipo').value = '';
+  ['ticker','nombre','sector','subsector','n1','n2','n3','n4','nextra','venta'].forEach(f => {
+    const el = document.getElementById('em-' + f);
+    if (el) el.value = '';
+  });
+  document.getElementById('empresa-modal-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function openEditEmpresa(id) {
+  const e = empresas.find(x => x.id === id);
+  if (!e) return;
+  editingEmpresaId = id;
+  document.getElementById('empresa-modal-title').textContent = 'Editar activo — ' + (e.nombre || e.ticker);
+  document.getElementById('em-ticker').readOnly = false;
+  document.getElementById('em-ticker').value = e.ticker || '';
+  document.getElementById('em-nombre').value = e.nombre || '';
+  document.getElementById('em-tipo').value = e.tipo || '';
+  document.getElementById('em-sector').value = e.sector || '';
+  document.getElementById('em-subsector').value = e.subsector || '';
+  document.getElementById('em-n1').value = e.nivel1 ?? '';
+  document.getElementById('em-n2').value = e.nivel2 ?? '';
+  document.getElementById('em-n3').value = e.nivel3 ?? '';
+  document.getElementById('em-n4').value = e.nivel4 ?? '';
+  document.getElementById('em-nextra').value = e.nivel_extra ?? '';
+  document.getElementById('em-venta').value = e.venta_deseada ?? '';
+  document.getElementById('empresa-modal-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEmpresaModal() {
+  document.getElementById('empresa-modal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+async function saveEmpresa() {
+  const row = {
+    Ticker: document.getElementById('em-ticker').value.trim().toUpperCase(),
+    Nombre: document.getElementById('em-nombre').value.trim(),
+    Tipo: document.getElementById('em-tipo').value,
+    Sector: document.getElementById('em-sector').value.trim(),
+    Subsector: document.getElementById('em-subsector').value.trim(),
+    Nivel1: parseFloat(document.getElementById('em-n1').value) || null,
+    Nivel2: parseFloat(document.getElementById('em-n2').value) || null,
+    Nivel3: parseFloat(document.getElementById('em-n3').value) || null,
+    Nivel4: parseFloat(document.getElementById('em-n4').value) || null,
+    Nivel_extra: parseFloat(document.getElementById('em-nextra').value) || null,
+    Venta_deseada: parseFloat(document.getElementById('em-venta').value) || null,
+  };
+  if (!row.Ticker) { showToast('El ticker es obligatorio', true); return; }
+  try {
+    if (editingEmpresaId) {
+      await sbFetch(`Empresas?id=eq.${editingEmpresaId}`, { method: 'PATCH', body: JSON.stringify(row) });
+      const idx = empresas.findIndex(e => e.id === editingEmpresaId);
+      if (idx >= 0) empresas[idx] = { ...empresas[idx], ticker: row.Ticker, nombre: row.Nombre, tipo: row.Tipo, sector: row.Sector, subsector: row.Subsector, nivel1: row.Nivel1, nivel2: row.Nivel2, nivel3: row.Nivel3, nivel4: row.Nivel4, nivel_extra: row.Nivel_extra, venta_deseada: row.Venta_deseada };
+    } else {
+      const newEmpArr = await sbFetch('Empresas?select=id', {
+        method: 'POST',
+        headers: { ...sbHeaders(), 'Prefer': 'return=representation' },
+        body: JSON.stringify(row)
+      });
+      const newEmp = (newEmpArr && newEmpArr[0]) ? newEmpArr[0] : {};
+      empresas.push({ id: newEmp.id, ticker: row.Ticker, nombre: row.Nombre, tipo: row.Tipo, sector: row.Sector, subsector: row.Subsector, nivel1: row.Nivel1, nivel2: row.Nivel2, nivel3: row.Nivel3, nivel4: row.Nivel4, nivel_extra: row.Nivel_extra, venta_deseada: row.Venta_deseada });
+    }
+    localStorage.setItem('pf_empresas', JSON.stringify(empresas));
+    closeEmpresaModal();
+    renderOpen();
+    renderEmpresas();
+    showToast(editingEmpresaId ? 'Empresa actualizada' : 'Empresa añadida');
+  } catch(e) { showToast('Error: ' + e.message, true); }
+}
+
+async function deleteEmpresa(id) {
+  if (!confirm('¿Eliminar esta empresa?')) return;
+  try {
+    await sbFetch(`Empresas?id=eq.${id}`, { method: 'DELETE' });
+    empresas = empresas.filter(e => e.id !== id);
+    localStorage.setItem('pf_empresas', JSON.stringify(empresas));
+    renderOpen();
+    renderEmpresas();
+    showToast('Empresa eliminada');
+  } catch(e) { showToast('Error: ' + e.message, true); }
+}
+
+// ── Pegar niveles desde portapapeles ──────────────────────────────────────────
+// Formato esperado: "700	640	620	605	585	520" → venta, nivel1-4, extra
+document.getElementById('em-n1').addEventListener('paste', (e) => {
+  const text = (e.clipboardData || window.clipboardData).getData('text');
+  const nums = text.trim().split(/[\s\t;]+/).map(s => parseFloat(s.replace(',', '.'))).filter(n => !isNaN(n));
+  if (nums.length < 2) return; // pegado normal de un solo número
+  e.preventDefault();
+
+  const isUsd = confirm('¿Los valores están en DÓLARES?\n\nAceptar = Dólares (se convertirán a euros)\nCancelar = Euros');
+  const rate = isUsd ? (usdEurRate || 0.92) : 1;
+  const conv = n => n === undefined ? null : Math.round(n * rate * 100) / 100;
+
+  const [venta, n1, n2, n3, n4, nextra] = nums;
+  const set = (id, val) => { if (val !== null && val !== undefined) document.getElementById(id).value = val; };
+  set('em-venta', conv(venta));
+  set('em-n1', conv(n1));
+  set('em-n2', conv(n2));
+  set('em-n3', conv(n3));
+  set('em-n4', conv(n4));
+  set('em-nextra', conv(nextra));
+  showToast('Niveles pegados' + (isUsd ? ` y convertidos a EUR (cambio ${rate})` : ''));
+});
+
+// ── Migración: activos sin tipo pasan a "Empresa" ─────────────────────────────
+async function migrateTipoEmpresa() {
+  const sinTipo = empresas.filter(e => !e.tipo);
+  if (!sinTipo.length) return;
+  try {
+    await Promise.all(sinTipo.map(e =>
+      sbFetch(`Empresas?id=eq.${e.id}`, { method: 'PATCH', body: JSON.stringify({ Tipo: 'Empresa' }) })
+    ));
+    sinTipo.forEach(e => { e.tipo = 'Empresa'; });
+    localStorage.setItem('pf_empresas', JSON.stringify(empresas));
+    renderEmpresas();
+  } catch(e) { /* silencioso, se reintentará en la próxima carga */ }
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.getElementById('new-fecha').value = new Date().toISOString().substring(0,16);
+renderAll();
+requireLogin().then(ok => {
+  if (ok) syncFromCloud().then(() => migrateTipoEmpresa());
+});
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (resumenView === 'global') renderGlobalView();
+    if (document.getElementById('sec-analisis')?.classList.contains('active')) { renderEvolutionChart(); renderSectorEvolutionChart(); }
+  }, 200);
+});
+</script>
+</body>
+</html>
